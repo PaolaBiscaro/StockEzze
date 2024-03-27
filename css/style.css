@@ -10,8 +10,8 @@ body {
 
 .navegacao {
     width: 100%;
-    height: 200px;
-    background-color: purple;
+    height: 100px;
+    background-color: #7E46F0;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -20,7 +20,7 @@ body {
 
 .fotos_principal {
     width: 80%;
-    height: 100px;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -35,10 +35,10 @@ body {
     background-position: center;
 }
 
-#botao {
+/*#botao {
     width: 50px;
     height: 50px;
-    /*background-image: url(../img/stock.png);*/
+    /*background-image: url(../img/stock.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,11 +47,12 @@ body {
     border-radius: 30, 30, 30, 30;
     cursor: pointer;
 }
+/*/
 
 
 
 #stock {
-    width: 500px;
+    width: 200px;
     height: 100px;
     background-image: url(../img/stock.png);
     background-size: contain;
@@ -83,7 +84,7 @@ body {
     background-color: purple;
     display: flex;
     justify-content: center;
-    box-shadow: 0 -10px 10px -10px #333;
+    box-shadow: 0 -5px 5px -5px #333;
 }
 
 .escritas {
@@ -99,10 +100,12 @@ body {
 #border_nav {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    
     
 }
 
@@ -113,19 +116,19 @@ body {
 #botao_second_nav{
     width: 100%;
     height: 100%;
-    background-color: purple;
+    background-color: #7E46F0;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     cursor: pointer;
 }
 
 #botao_second_nav:hover{
-    background-color: mediumorchid;
+    background-color: #6839C5;
     transform: translate(0px, -5px);
-    box-shadow: 2px 5px 10px black;
+    /*box-shadow: 2px 5px 10px black;*/
 }
 
 #border_nav:hover {
-    background-color: mediumorchid;
+    background-color: #6839C5;
 }
