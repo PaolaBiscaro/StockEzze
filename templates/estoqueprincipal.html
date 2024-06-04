@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/filtro.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Stockezze - Meu Estoque</title>
+</head>
+
+<body>
+    <header>
+        <nav Class="navegacao">
+            <div class="fotos_principal">
+                <a href="{{url_for('home.index')}}">
+                    <div id="stock"></div>
+                </a>
+                <div id="logo"> </div>
+            </div>
+        </nav>
+
+        <section class="second_nav">
+            <div class="escritas">
+                <a href="{{url_for('usuario.meu_estoque')}}" class="border_nav">
+                    <button class="botao_second_nav">Meu Estoque</button></a>
+
+                <a href="cadastrodeprodutos.html" class="border_nav">
+                    <button class="botao_second_nav">Cadastrar Produtos</button></a>
+
+                <a href="leitordebarras.html" class="border_nav">
+                    <button class="botao_second_nav">Leitor código de barras</button></a>
+
+                <a href="relatorio.html" class="border_nav">
+                    <button class="botao_second_nav">Gerar Relatório</button></a>
+
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="mover_all_cadastro">
+            <div class="centralizar_cadastro">
+                <!--  <div class="moveProdutos">
+                <h1 id="produtos">Produtos</h1>
+
+            </div>
+            <div class="barraestoque">
+                <h1 id="descricao">Nome</h1>
+                <h1 id="descricao">Qnt</h1>
+                <h1 id="descricao">Validade</h1>
+                <h1 id="descricao">Descrição</h1>
+                <h1 id="descricao">Codigo</h1>
+            </div> -->
+
+                <!--z-index-->
+
+                <div class="informacoes-pesquisa-filtro">
+                    <div class="alinhar_cadastro_nome">
+                        <h1>Meu estoque</h1>
+                        <h5>Total de produtos cadastrados: --</h5>
+                    </div>
+                    <!--Div barra de pesquisa-->
+                    <div class="pesquisa-filtro-esquerdo">
+
+                        <div class="search">
+                            <label for="searchInput">
+                                <span class="material-symbols-outlined">search</span>
+                            </label>
+                            <input type="text" id="searchInput" placeholder="Pesquise o produto...">
+                        </div>
+
+                        <div class="filter-container">
+
+                            <div class="dropdown">
+                                <button class="dropbtn" onclick="toggleDropdown()"><img
+                                        src="../static/img/filtro (2).png"></button>
+                                <div id="dropdown-content" class="dropdown-content">
+                                    <button onclick="sortProducts('name')">Nome (A-Z)</button>
+                                    <button onclick="sortProducts('code')">Código do Produto</button>
+                                    <button onclick="sortProducts('quantity')">Quantidade</button>
+                                    <button onclick="filterStock('high')">Estoque Alto</button>
+                                    <button onclick="filterStock('low')">Estoque Baixo</button>
+                                    <button onclick="resetFilter()">Mostrar Todos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <section class="container1">
+                {% for produtos in produto%}
+                    <div class="produto" onclick="showHide('#produto1')" data-name="Leite Italac" data-code="1511111"
+                        data-quantity="366" data-stock="high">
+                        <div class="ajuste-produto">
+                            <div class="produto-titulo">
+                                <h5>{{produtos.id}}</h5>
+                                <h3>{{produtos.name}}</h3>
+                            </div>
+                            <div class="ajuste-qtd">
+                                <div class="qtd">
+                                    <span class="separador"></span>
+                                    <h5>QTN</h5>
+                                    <p>366</p>
+                                </div>
+                                <div class="lote">
+                                    <a href="todoslotes.html">
+                                        <div class="lote-img"></div>
+                                    </a>
+                                    <div class="seta"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="descricao_produto" id="produto1">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+                                dolorum minima earum
+                                repudiandae? Dolorem suscipit unde atque, voluptatum ipsum et, eius eligendi vitae
+                                tempore
+                                modi
+                                magnam quo, nesciunt quia pariatur! Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit.
+                                Autem temporibus corrupti similique quod culpa, officiis quos laboriosam doloremque
+                                quae.
+                                Quae
+                                facere tenetur architecto esse cumque, non ullam consequatur iure delectus!</p>
+
+                            <div class="linha">
+                                <div class="coluna-10">
+                                    <h4>Data Validade</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Data Cadastro</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de Lotes</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de unidades</h4>
+                                    <p>100</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor unitário</h4>
+                                    <p>R$5,00</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor lote</h4>
+                                    <p>R$200</p>
+                                </div>
+                            </div>
+                            <div class="botoes">
+                                <button class="btn-excluir">Excluir Cadastro</button>
+                                <div class="vermelhos">
+                                    <button class="btn-retirar">Retirar</button>
+                                    <button class="btn-adicionar">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+                    <div class="produto" onclick="showHide('#produto2')" data-name="Macarrão" data-code="1565888"
+                        data-quantity="281" data-stock="high">
+                        <div class="ajuste-produto">
+                            <div class="produto-titulo">
+                                <h5>1565888</h5>
+                                <h3>Macarrão Dona Benta</h3>
+                            </div>
+                            <div class="ajuste-qtd">
+                                <div class="qtd">
+                                    <span class="separador"></span>
+                                    <h5>QTN</h5>
+                                    <p>281</p>
+                                </div>
+                                <div class="lote">
+                                    <a href="todoslotes.html">
+                                        <div class="lote-img"></div>
+                                    </a>
+                                    <div class="seta"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="descricao_produto" id="produto2">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+                                dolorum minima earum
+                                repudiandae? Dolorem suscipit unde atque, voluptatum ipsum et, eius eligendi vitae
+                                tempore
+                                modi
+                                magnam quo, nesciunt quia pariatur! Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit.
+                                Autem temporibus corrupti similique quod culpa, officiis quos laboriosam doloremque
+                                quae.
+                                Quae
+                                facere tenetur architecto esse cumque, non ullam consequatur iure delectus!</p>
+
+                            <div class="linha">
+                                <div class="coluna-10">
+                                    <h4>Data Validade</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Data Cadastro</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de Lotes</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de unidades</h4>
+                                    <p>100</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor unitário</h4>
+                                    <p>R$5,00</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor lote</h4>
+                                    <p>R$200</p>
+                                </div>
+                            </div>
+                            <div class="botoes">
+                                <button class="btn-excluir">Excluir Cadastro</button>
+                                <div class="vermelhos">
+                                    <button class="btn-retirar">Retirar</button>
+                                    <button class="btn-adicionar">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="produto" onclick="showHide('#produto3')" data-name="Banana" data-code="135687"
+                        data-quantity="21" data-stock="low">
+                        <div class="ajuste-produto">
+                            <div class="produto-titulo">
+                                <h5>135687</h5>
+                                <h3>Banana</h3>
+                            </div>
+                            <div class="ajuste-qtd">
+                                <div class="qtd">
+                                    <span class="separador"></span>
+                                    <h5>QTN</h5>
+                                    <p>21</p>
+                                </div>
+                                <div class="lote">
+                                    <a href="todoslotes.html">
+                                        <div class="lote-img"></div>
+                                    </a>
+                                    <div class="seta"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="descricao_produto" id="produto3">
+                            <p>Banana bem amarela ui ui</p>
+
+                            <div class="linha">
+                                <div class="coluna-10">
+                                    <h4>Data Validade</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Data Cadastro</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de Lotes</h4>
+                                    <p>xx/xx/xxxx</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Total de unidades</h4>
+                                    <p>100</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor unitário</h4>
+                                    <p>R$5,00</p>
+                                </div>
+                                <div class="coluna-10">
+                                    <h4>Valor lote</h4>
+                                    <p>R$200</p>
+                                </div>
+                            </div>
+                            <div class="botoes">
+                                <a onclick="showPopup1('flex');"><button class="btn-excluir">Excluir
+                                        Cadastro</button></a>
+                                <div class="vermelhos">
+                                    <button class="btn-retirar">Retirar</button>
+                                    <a onclick="showPopup('flex');"><button class="btn-adicionar">Adicionar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <div id="bg-modal">
+
+            <div class="pop-do-dois">
+
+
+                <h1>Qual a quantidade que você quer adicionar no estoque ?</h1>
+
+
+
+                <div class="inserir">
+
+                    <input type="number" placeholder="QTD" name="input-quantidade">
+                    <input type="text" placeholder="LOTE" name="input-lote">
+                </div>
+
+                <p class="paragrafo-p-vermelho">Coloque a quantidade exata ou informe o lote que calcularemos a
+                    quantidade!</p>
+
+                <button class="botao-limpar">Limpar</button>
+                <button class="botao-adicionar">Adicionar</button>
+
+                <div class="fechar">
+                    <a onclick="showPopup('none');"> <button class="buttonpopupclose">X</button> </a>
+                </div>
+
+            </div>
+        </div>
+        <div id="bg-modal1">
+            <div class="modal-contact">
+
+
+                <h1>Excluir Cadastro?</h1>
+                <p> Tem certeza que deseja excluir esse cadastro do seu estoque? Todos os dados referentes a esse item
+                    serão perdidos! </p>
+                <p class="paragrafo-p-vermelho">Código, valor, quantidade e outros dados serão excluidos</p>
+
+
+
+                <button class="botao-cancelar">Cancelar</button>
+                <button class="botao-excluir">Excluir</button>
+
+                <div class="fechar">
+                    <a onclick="showPopup1('none');"> <button class="buttonpopupclose">X</button> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="../static/js/srcript.js"></script>
+</body>
+
+
+</html>

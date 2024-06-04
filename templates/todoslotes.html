@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/lotes.css">
+    <link rel="stylesheet" href="../css/filtro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Todos os Lote - Stockezze</title>
+</head>
+<body>
+    <header>
+        <nav Class="navegacao">
+            <div class="fotos_principal">
+                <a href="index.html">
+                    <div id="stock"></div>
+                </a>
+                <div id="logo"> </div>
+            </div>
+        </nav>
+
+
+        <section class="second_nav">
+            <div class="escritas">
+                <a href="estoquePrincipal.html" class="border_nav">
+                    <button class="botao_second_nav">Estoque</button></a>
+
+                <a href="leitordebarras.html" class="border_nav">
+                    <button class="botao_second_nav">Leitor de barras</button></a>
+
+                <a href="cadastrodeprodutos.html" class="border_nav">
+                    <button class="botao_second_nav">Cadastro de produtos</button></a>
+
+                <a href="relatorio.html" class="border_nav">
+                    <button class="botao_second_nav">Relatório</button></a>
+
+            </div>
+
+    </header>
+    <main>
+        <section class="mover_all_cadastro"> 
+            <div class="centralizar_cadastro">
+               <!--  <div class="moveProdutos">
+                <h1 id="produtos">Produtos</h1>
+
+            </div>
+            <div class="barraestoque">
+                <h1 id="descricao">Nome</h1>
+                <h1 id="descricao">Qnt</h1>
+                <h1 id="descricao">Validade</h1>
+                <h1 id="descricao">Descrição</h1>
+                <h1 id="descricao">Codigo</h1>
+            </div> -->
+
+                <!--z-index-->
+
+            <div class="informacoes-pesquisa-filtro">
+              <div class="alinhar_cadastro_nome">
+                    <h1>Meu estoque</h1>
+                    <h5>Total de produtos cadastrados: --</h5>
+              </div>
+                    <!--Div barra de pesquisa-->
+                    <div class="pesquisa-filtro-esquerdo">
+                    <div class="search">
+                        <label for="searchInput">
+                            <span class="material-symbols-outlined">search</span>
+                        </label>
+                        <input type="text" id="searchInput" placeholder="Pesquise o produto...">
+                    </div>
+                    <div class="filter-container">
+        
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="toggleDropdown()"><img src="../img/filtro (2).png"></button>
+                            <div id="dropdown-content" class="dropdown-content">
+                                <button id="sortByName" onclick="sortProducts('name')">Nome (A-Z)</button>
+                                <button id="sortByQuantity" onclick="sortProducts('quantity')">Quantidade</button>
+                                <button id="resetFilter" onclick="resetFilter()">Mostrar Todos</button>
+
+                            </div>
+                        </div>
+                    </div>
+                   
+            </div>
+            </div>
+
+
+                <section class="container2">
+                    
+                    <div class="lote" data-name="123456789-abcd" data-quantity="366">
+                        <div class="ajuste-lote">
+                        <div class="lote-titulo" >
+                            <h5>N° do Lote</h5>
+                        <h3>123456789-abcd</h3>
+                    </div>
+                    <div class="ajuste-qtd">
+                        <div class="qtd">
+                            <span class="separador"></span>
+                            <h5>QTN</h5>
+                            <p>366</p>
+                        </div>
+                        <div class="lote-situacao">
+                            <div class="situacao">
+                                <img src="../img/circulo-verde.png" alt="Lote disponível">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                     </div> 
+
+                     <div class="lote" data-name="333333-gfds" data-quantity="520">
+                        <div class="ajuste-lote">
+                        <div class="lote-titulo">
+                            <h5>N° do Lote</h5>
+                        <h3>333333-gfds</h3>
+                    </div>
+                    <div class="ajuste-qtd">
+                        <div class="qtd">
+                            <span class="separador"></span>
+                            <h5>QTN</h5>
+                            <p>520</p>
+                        </div>
+                        <div class="lote-situacao">
+                            <div class="situacao">
+                                <img src="../img/circulo-verde.png" alt="Lote disponível">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                     </div> 
+
+                     <div class="lote" data-name="9876-abacate" data-quantity="254">
+                        <div class="ajuste-lote">
+                        <div class="lote-titulo">
+                            <h5>N° do Lote</h5>
+                        <h3>9876-abacate</h3>
+                    </div>
+                    <div class="ajuste-qtd">
+                        <div class="qtd">
+                            <span class="separador"></span>
+                            <h5>QTN</h5>
+                            <p>254</p>
+                        </div>
+                        <div class="lote-situacao">
+                            <div class="situacao">
+                                <img src="../img/circulo-vermelho.png" alt="Lote indisponível">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                     </div> 
+             </section>
+        </div>
+</section>  
+    </main>
+
+    </main>
+    <script src="../js/script2.js"></script>
+
+</body>
+</html>

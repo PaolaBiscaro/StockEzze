@@ -1,0 +1,720 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #f8f7f9;
+}
+
+main{
+    min-width: 320px;
+}
+
+
+.planofundo2 {
+    background-color: #242136;
+    height: 100%;
+}
+
+.telainteira {
+    background-image: url(../img/IMAGEM_ESTOQUE.png);
+    background-size:cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    background-color: #242136;
+    padding-top: 70px;
+    padding-left: 10%;
+}
+
+.texto {
+    color: #fff;
+}
+
+
+/*Navegação Menu principal*/
+
+.navegacao {
+    width: 100%;
+    height: 80px;
+    min-width: 320px;
+    background-color: #242136;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /*position: fixed;*/
+
+}
+
+.fotos_principal {
+    width: 80%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+#logo {
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/se.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+#stock {
+    width: 200px;
+    height: 100px;
+    background-image: url(../img/stock.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.teste {
+    color: blueviolet;
+}
+
+#imagem {
+    width: 500px;
+    height: 500px;
+}
+
+.mover_imagem {
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.second_nav {
+    height: 50px;
+    width: 100%;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    /*box-shadow: 0 -5px 3px -5px #333;*/
+}
+
+.escritas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.border_nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.border_nav:link {
+    text-decoration: none;
+}
+
+.botao_second_nav {
+    width: 100%;
+    height: 100%;
+    background-color: #242136;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.botao_second_nav:hover {
+    background-color: #6839C5;
+    transform: translate(0px, -5px);
+    /*box-shadow: 2px 5px 10px black;*/
+}
+
+.coluna-30{
+    width: 25%;
+    border: 1px solid#b22134;
+    height: 100%;
+    display: flex;
+    margin: 80px;
+   border-radius:10px; 
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+
+    
+}
+.texto{
+    color: #fff;
+    font-size: 20pt;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.barras {
+    width: 200px;
+    cursor: pointer;
+}
+
+.lupa {
+    width:180px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.calendario{
+    width: 200px;
+}
+
+.colunas{
+    display: flex;
+    flex-direction:row ;
+    justify-content: center;  
+}
+.coluna-30 h2{
+    color: #fff;
+    margin: 5px;
+}
+.container{
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 50px;
+    
+}
+
+
+.ajuste{
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.texto-esquerdo, .imagem-direita{
+    width: 50%;
+    justify-content: center;
+    display:flex;
+    margin: 60px;
+
+}
+
+
+.titulo_sobre{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+.titulo_sobre h5{
+    color: #666666;
+}
+
+.paragrafo_sobre {
+
+    margin: 40px;
+    padding: 10px;
+}
+.paragrafo_sobre p{
+    font-size: 18pt;
+}
+
+.planos{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.botao-planos{
+    cursor: pointer;
+    font-size: 14pt;
+    background-color:#b22134;
+    color: #f8f7f9;
+    border: 0;
+    border-radius: 30px;
+    height: 50px;
+    width: 250px;
+    padding: 5px;
+}
+.botao-planos:hover {
+    background-color: red;
+    text-decoration: none;
+    transition:all 0.3S ease-in-out;
+}
+
+.paragrafo_sobre h3{
+    color: rgb(62, 30, 218);
+    margin-top: 70px;
+}
+
+.img_sobre{
+
+    align-items: center;
+    width: 100%;
+}
+.img_sobre img{
+    width: 450px;
+    margin-left: 90px;
+}
+.espacamento {
+    width: 100vh;
+    height: 100vh;
+}
+
+.titulo_banner {
+    color: #fff;
+    font-size: 26px;
+    max-width: 500px;
+}
+
+.paragrafo_banner {
+    color: #fff;
+    font-size: 18px;
+    margin-top:40px;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+a .botao {
+    text-decoration: none;
+
+}
+
+.botao {
+    cursor: pointer;
+    background-color:#b22134;
+    color: #f8f7f9;
+    border: 0;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+   
+}
+
+
+.botao:hover {
+    background-color: red;
+    text-decoration: none;
+    transition:all 0.3S ease-in-out;
+}
+
+
+/*LISTA DE PRODUTOS*/
+section.container1 div.descricao_produto{
+    transition: .1s;
+    height: 0;
+    overflow: hidden;
+}
+section.container1 div.descricao_produto.ativo{
+    height: 80%;
+    transition: .1s;
+}
+section.container1 div.descricao_produto p{
+    transition: .1s;
+    padding: 20px;
+}
+div.produto div.produto-titulo h3{
+    font-weight: 600;
+}
+
+div.produto{
+    border: 1px solid #c2c2c2;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+div.produto div.ajuste-produto{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+
+}       
+div.produto div.ajuste-produto div.ajuste-qtd{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+div.produto div.coluna-10 {
+    width: 15%;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid black;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+
+ }
+ /*divisão dos blocos dentro da descrição*/
+ .linha{
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    padding:10px;
+}
+.lote{
+    display: flex;
+    margin: auto 20px;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.lote-img{
+    width: 32px;
+    background-image: url(../img/caixa-aberta.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 32px;
+    margin: 5px;
+
+}
+.seta{
+    width: 27px;
+    background-image: url(../img/seta-para-cima.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 27px;
+    margin: 5px;
+}
+
+.separador::before{
+    width: 2px;
+    height: 40px;
+    position: absolute;
+    content: '';
+    background-color: #b4b4b4;
+    margin-left: 35px;
+}
+/*botoes*/
+.botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.btn-excluir{
+    border: none;
+    background: none;
+    color: blue;
+    cursor: pointer;
+}
+.btn-retirar{
+    border: 1px solid red;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 120px;
+    font-size: 12pt;
+    height: 35px;
+    color: red;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.btn-excluir:hover{
+    color: #7676f5;
+}
+.btn-adicionar:hover{
+    background-color: #f55e5e;
+    border: #f55e5e;
+    transform: scale(1.1);
+}
+.btn-retirar:hover{
+    background-color: #e3e1e1;
+    transform: scale(1.1);
+}
+
+.btn-adicionar{
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 5px;
+    width: 120px;
+    font-size: 12pt;
+    height: 35px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/*alinhamento no centro*/
+.alinhar_cadastro_nome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.centralizar_cadastro {
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+}
+section.mover_all_cadastro {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+/*BARRA DE PESQUISA*/
+
+.search{
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid #c2c2c2;
+    background-color: #00000006;
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #4b4b4b;
+    height: 35px;
+}
+
+#searchInput{
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+}
+
+.search label{
+    padding-left: 5px;
+}
+.informacoes-pesquisa-filtro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.pesquisa-filtro-esquerdo{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/* Adicione estas regras no seu arquivo CSS */
+#bg-modal, #bg-modal1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000; /* Certifique-se de que o z-index é maior do que outros elementos */
+}
+
+#bg-modal.show, #bg-modal1.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-contact {
+    border-radius: 8px;
+    width: 392px;
+    height: 314px;
+    background-color: white;
+    opacity: 1; 
+    text-align: center;
+    padding: 35px; 
+    position: relative;
+}
+
+
+.pop-do-dois.show, .modal-contact.show {
+    transform: scale(1);
+}
+
+.paragrafo-p-vermelho{
+    color:red;
+    font-size: 10pt;
+    margin: 10px;
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    
+}
+
+
+.botao-cancelar{
+    border: 1px solid red;
+    background-color: #fff;
+    color: red;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    transition:all 0.3S ease-in-out;
+    margin-right: 5px;
+
+
+    
+}
+.botao-cancelar:hover{
+    background-color: #e3e1e1;
+    transform: scale(1.1);
+}
+
+.botao-excluir{
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 5px;
+
+}
+
+.botao-excluir:hover{
+    background-color: #f55e5e;
+    border:#f55e5e;
+    transform: scale(1.1);
+}
+.buttonpopupclose {
+    border: none;
+    color: red;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+
+
+
+.inserir {
+    display:flex;
+
+    justify-content: center;
+}
+
+#pop-dois{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+
+
+
+
+.pop-do-dois{
+    border-radius: 8px;
+    width: 392px;
+    height: 354px;
+    background-color: white;
+    opacity: 1; 
+    text-align: center;
+    padding: 35px; 
+    position: relative;
+    
+}
+.pop-do-dois h1{
+    margin: 10px;
+    font-weight: 400;
+    width: 100%;
+}
+
+
+.inserir input{
+    width: 100px;
+    margin: 5px;
+    border-radius:6px;
+    border: 1px solid grey;
+    height: 20px;
+}
+
+
+
+
+.botao-limpar{
+    border: 1px solid #832c38;
+    background-color: #832c38;
+    color: #fff;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    transition:all 0.3S ease-in-out;
+    margin-right: 5px;
+}
+
+
+
+
+
+.botao-limpar:hover{
+    background-color:#f64545;
+    border:#f64545;
+    transform: scale(1.1);
+
+}
+
+
+
+
+.botao-adicionar{
+    border: 1px solid blue;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 5px;
+}
+
+
+
+
+.botao-adicionar:hover{
+    background-color: #11c0e3;
+    border:#11c0e3;
+    transform: scale(1.1);
+
+}
