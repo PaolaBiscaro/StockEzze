@@ -24,18 +24,17 @@
 
         <section class="second_nav">
             <div class="escritas">
-                <a href="{{url_for('usuario.meu_estoque')}}" class="border_nav">
-                    <button class="botao_second_nav">Meu Estoque</button></a>
+                <a href="{{ url_for('usuario.meu_estoque') }}" class="border_nav">
+                    <button class="botao_second_nav">Estoque</button></a>
 
-                <a href="cadastrodeprodutos.html" class="border_nav">
-                    <button class="botao_second_nav">Cadastrar Produtos</button></a>
+                <a href="{{ url_for('usuario.leitor_barras') }}" class="border_nav">
+                    <button class="botao_second_nav">Leitor de barras</button></a>
 
-                <a href="leitordebarras.html" class="border_nav">
-                    <button class="botao_second_nav">Leitor código de barras</button></a>
+                <a href="{{ url_for('usuario.cadastro_produtos') }}" class="border_nav">
+                    <button class="botao_second_nav">Cadastro Produtos</button></a>
 
-                <a href="relatorio.html" class="border_nav">
-                    <button class="botao_second_nav">Gerar Relatório</button></a>
-
+                <a href="{{ url_for('usuario.relatorio') }}" class="border_nav">
+                    <button class="botao_second_nav">Relatório</button></a>
             </div>
         </section>
     </header>
@@ -91,15 +90,19 @@
 
                 </div>
 
-
+{%for produto in produtos%}
+    <div>
+        <p>{{produto.nome}}</p>
+    </div>
+{%endfor%}
                 <section class="container1">
                 {% for produtos in produto%}
                     <div class="produto" onclick="showHide('#produto1')" data-name="Leite Italac" data-code="1511111"
                         data-quantity="366" data-stock="high">
                         <div class="ajuste-produto">
                             <div class="produto-titulo">
-                                <h5>{{produtos.id}}</h5>
-                                <h3>{{produtos.name}}</h3>
+                                <h5>{{produto.id}}</h5>
+                                <h3>{{produto.name}}</h3>
                             </div>
                             <div class="ajuste-qtd">
                                 <div class="qtd">
