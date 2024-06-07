@@ -103,11 +103,32 @@ function resetFilter() {
     });
 }
 
-// Função para alternar a visibilidade dos detalhes do produto
+//Função para alternar a visibilidade dos detalhes do produto
 function showHide(id) {
     const element = document.querySelector(id);
     element.classList.toggle('ativo');
 }
+
+
+// function showHide(produtoId) {
+//     var divProduto = document.getElementById(produtoId);
+//     var divDescricao = divProduto.querySelector('.descricao_produto');
+
+//     if (divDescricao.style.display === "none" || divDescricao.style.display === "") {
+//         divDescricao.style.display = "block";
+//     } else {
+//         divDescricao.style.display = "none";
+//     }
+// }
+
+// function showHide(elementId) {
+//     var element = document.getElementById(elementId);
+//     if (element.style.display === "none" || element.style.display === "") {
+//         element.style.display = "block";
+//     } else {
+//         element.style.display = "none";
+//     }
+// }
 
 // Fechar dropdown quando clicado fora dele
 document.addEventListener('click', function(event) {

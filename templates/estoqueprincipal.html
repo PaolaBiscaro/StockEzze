@@ -15,7 +15,7 @@
     <header>
         <nav Class="navegacao">
             <div class="fotos_principal">
-                <a href="{{url_for('home.index')}}">
+                <a href="{{url_for('home')}}">
                     <div id="stock"></div>
                 </a>
                 <div id="logo"> </div>
@@ -24,16 +24,16 @@
 
         <section class="second_nav">
             <div class="escritas">
-                <a href="{{ url_for('usuario.meu_estoque') }}" class="border_nav">
+                <a href="{{ url_for('meu_estoque') }}" class="border_nav">
                     <button class="botao_second_nav">Estoque</button></a>
 
-                <a href="{{ url_for('usuario.leitor_barras') }}" class="border_nav">
+                <a href="{{ url_for('leitor_barras') }}" class="border_nav">
                     <button class="botao_second_nav">Leitor de barras</button></a>
 
-                <a href="{{ url_for('usuario.cadastro_produtos') }}" class="border_nav">
+                <a href="{{ url_for('cadastro_produtos') }}" class="border_nav">
                     <button class="botao_second_nav">Cadastro Produtos</button></a>
 
-                <a href="{{ url_for('usuario.relatorio') }}" class="border_nav">
+                <a href="{{ url_for('relatorio') }}" class="border_nav">
                     <button class="botao_second_nav">Relatório</button></a>
             </div>
         </section>
@@ -90,19 +90,22 @@
 
                 </div>
 
-{%for produto in produtos%}
-    <div>
-        <p>{{produto.nome}}</p>
-    </div>
-{%endfor%}
+                
+                <!-- {% for produto in produtos %}
+                <div>
+                    <tr>{{produto.nome}}</tr>
+                </div>
+                {% endfor %} -->
+
                 <section class="container1">
-                {% for produtos in produto%}
-                    <div class="produto" onclick="showHide('#produto1')" data-name="Leite Italac" data-code="1511111"
+                    {% for produto in produtos %}
+                    <div class="produto" onclick="showHide('#produto1')" data-name="{{produto[1]}}" data-code="{{produto[3]}}"
                         data-quantity="366" data-stock="high">
                         <div class="ajuste-produto">
                             <div class="produto-titulo">
-                                <h5>{{produto.id}}</h5>
-                                <h3>{{produto.name}}</h3>
+
+                                <h5>{{ produto[3] }}</h5>
+                                <h3>{{ produto[1] }}</h3>
                             </div>
                             <div class="ajuste-qtd">
                                 <div class="qtd">
@@ -111,52 +114,43 @@
                                     <p>366</p>
                                 </div>
                                 <div class="lote">
-                                    <a href="todoslotes.html">
+                                    <a href="{{ url_for('lotes_produto', produto_id=produto[0]) }}">
                                         <div class="lote-img"></div>
                                     </a>
                                     <div class="seta"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="descricao_produto" id="produto1">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-                                dolorum minima earum
-                                repudiandae? Dolorem suscipit unde atque, voluptatum ipsum et, eius eligendi vitae
-                                tempore
-                                modi
-                                magnam quo, nesciunt quia pariatur! Lorem ipsum dolor sit, amet consectetur adipisicing
-                                elit.
-                                Autem temporibus corrupti similique quod culpa, officiis quos laboriosam doloremque
-                                quae.
-                                Quae
-                                facere tenetur architecto esse cumque, non ullam consequatur iure delectus!</p>
-
+                        <div class="descricao_produto" id="#produto1" >
+                            <p>{{ produto[2] }}</p>
+                        {% for lote in lotes%}
                             <div class="linha">
                                 <div class="coluna-10">
                                     <h4>Data Validade</h4>
-                                    <p>xx/xx/xxxx</p>
+                                    <p>{{lote[10]}}</p>
                                 </div>
                                 <div class="coluna-10">
                                     <h4>Data Cadastro</h4>
-                                    <p>xx/xx/xxxx</p>
+                                    <p>{{lote[8]}}</p>
                                 </div>
                                 <div class="coluna-10">
                                     <h4>Total de Lotes</h4>
-                                    <p>xx/xx/xxxx</p>
+                                    <p>xxxxxx</p>
                                 </div>
                                 <div class="coluna-10">
                                     <h4>Total de unidades</h4>
-                                    <p>100</p>
+                                    <p>{{lote[6]}}</p>
                                 </div>
                                 <div class="coluna-10">
                                     <h4>Valor unitário</h4>
-                                    <p>R$5,00</p>
+                                    <p>{{lote[4]}}</p>
                                 </div>
                                 <div class="coluna-10">
                                     <h4>Valor lote</h4>
-                                    <p>R$200</p>
+                                    <p>{{lote[5]}}</p>
                                 </div>
                             </div>
+                        {% endfor %}
                             <div class="botoes">
                                 <button class="btn-excluir">Excluir Cadastro</button>
                                 <div class="vermelhos">
@@ -166,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                {%endfor%}
+                    {% endfor %}
                     <div class="produto" onclick="showHide('#produto2')" data-name="Macarrão" data-code="1565888"
                         data-quantity="281" data-stock="high">
                         <div class="ajuste-produto">
@@ -181,7 +175,7 @@
                                     <p>281</p>
                                 </div>
                                 <div class="lote">
-                                    <a href="todoslotes.html">
+                                    <a href="{{url_for('lotes_produto',  produto_id=produto_id)}}">
                                         <div class="lote-img"></div>
                                     </a>
                                     <div class="seta"></div>

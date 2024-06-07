@@ -12,7 +12,7 @@
     <header>
         <nav Class="navegacao">
             <div class="fotos_principal">
-                <a href="index.html">
+                <a href="{{url_for('home')}}">
                     <div id="stock"></div>
                 </a>
                 <div id="logo"> </div>
@@ -21,16 +21,16 @@
 
         <section class="second_nav">
             <div class="escritas">
-                <a href="{{ url_for('usuario.meu_estoque') }}" class="border_nav">
+                <a href="{{ url_for('meu_estoque') }}" class="border_nav">
                     <button class="botao_second_nav">Estoque</button></a>
 
-                <a href="{{ url_for('usuario.leitor_barras') }}" class="border_nav">
+                <a href="{{ url_for('leitor_barras') }}" class="border_nav">
                     <button class="botao_second_nav">Leitor de barras</button></a>
 
-                <a href="{{ url_for('usuario.cadastro_produtos') }}" class="border_nav">
+                <a href="{{ url_for('cadastro_produtos') }}" class="border_nav">
                     <button class="botao_second_nav">Cadastro Produtos</button></a>
 
-                <a href="{{ url_for('usuario.relatorio') }}" class="border_nav">
+                <a href="{{ url_for('relatorio') }}" class="border_nav">
                     <button class="botao_second_nav">Relatório</button></a>
             </div>
 
@@ -56,7 +56,7 @@
                             <input type="text" placeholder="Digite o código de barras ou id" id="cadastro_nome">
                         </div>
                     </div>
-                    <img src="img/camera.png" alt="" id="imgCadastro">
+                    <img src="../static/img/caixa-aberta.png" alt="" id="imgCadastro">
                 </div>
 
                 <div class="second_mover_cadastro_nome">
