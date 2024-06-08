@@ -3,14 +3,14 @@
 create database stockezze_oficial;
 use stockezze_oficial;
 
-CREATE TABLE Produto (
+CREATE TABLE produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     descricao TEXT,
     codigo VARCHAR(50) UNIQUE NOT NULL
 );
 
-CREATE TABLE Fornecedor (
+CREATE TABLE fornecedor (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     marca VARCHAR(255),
@@ -42,7 +42,7 @@ CREATE TABLE lote (
     FOREIGN KEY (fornecedor_id) REFERENCES fornecedor(id)
 );
 
-CREATE TABLE Usuario (
+CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Usuario (
 );
 
 
-CREATE TABLE EntradaSaida (
+CREATE TABLE entradasaida (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tipo ENUM('entrada', 'saida') NOT NULL,
     data DATE NOT NULL,
@@ -59,9 +59,9 @@ CREATE TABLE EntradaSaida (
     produto_id INT,
     lote_id INT,
     usuario_id INT,
-    FOREIGN KEY (produto_id) REFERENCES Produto(id),
-    FOREIGN KEY (lote_id) REFERENCES Lote(id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+    FOREIGN KEY (produto_id) REFERENCES produto(id),
+    FOREIGN KEY (lote_id) REFERENCES lote(id),
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
 
