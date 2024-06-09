@@ -182,4 +182,33 @@ function showPopup1(display) {
             modal.style.display = 'none';
         }, 300);
     }
+
+
+    
+}
+
+
+
+
+
+
+function showPopup2(display) {
+    const modal = document.getElementById('bg-modal2');
+    modal.style.display = display;
+    if (display === 'flex') {
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.style.opacity = 1;
+            modal.classList.add('show');
+        }, 10);
+    } else {
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        }, 300);
+    }
+
+
+    
 }

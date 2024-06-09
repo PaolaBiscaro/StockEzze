@@ -13,7 +13,7 @@ body {
     background-color: #f8f7f9;
 }
 
-main{
+main {
     min-width: 320px;
 }
 
@@ -25,8 +25,8 @@ main{
 
 .telainteira {
     background-image: url(../img/IMAGEM_ESTOQUE.png);
-    background-size:cover;
-    background-position:top center;
+    background-size: cover;
+    background-position: top center;
     background-repeat: no-repeat;
     width: 100%;
     height: 80vh;
@@ -63,9 +63,9 @@ main{
 }
 
 #logo {
-    width: 200px;
-    height: 200px;
-    background-image: url(../img/se.png);
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/TESTE_LOGO_STOCKEZZE1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -117,7 +117,7 @@ main{
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .border_nav {
@@ -151,20 +151,21 @@ main{
     /*box-shadow: 2px 5px 10px black;*/
 }
 
-.coluna-30{
+.coluna-30 {
     width: 25%;
     border: 1px solid#b22134;
     height: 100%;
     display: flex;
     margin: 80px;
-   border-radius:10px; 
-   justify-content: center;
-   flex-direction: column;
-   align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    
+
 }
-.texto{
+
+.texto {
     color: #fff;
     font-size: 20pt;
     display: flex;
@@ -178,55 +179,58 @@ main{
 }
 
 .lupa {
-    width:180px;
+    width: 180px;
     margin: 10px;
     cursor: pointer;
 }
 
-.calendario{
+.calendario {
     width: 200px;
 }
 
-.colunas{
+.colunas {
     display: flex;
-    flex-direction:row ;
-    justify-content: center;  
+    flex-direction: row;
+    justify-content: center;
 }
-.coluna-30 h2{
+
+.coluna-30 h2 {
     color: #fff;
     margin: 5px;
 }
-.container{
+
+.container {
     flex-direction: column;
     display: flex;
     margin-bottom: 50px;
-    
+
 }
 
 
-.ajuste{
+.ajuste {
     display: flex;
     flex-direction: row;
 
 
 }
 
-.texto-esquerdo, .imagem-direita{
+.texto-esquerdo,
+.imagem-direita {
     width: 50%;
     justify-content: center;
-    display:flex;
+    display: flex;
     margin: 60px;
 
 }
 
 
-.titulo_sobre{
+.titulo_sobre {
     text-align: center;
     margin-top: 30px;
     font-size: 1.5rem;
 }
 
-.titulo_sobre h5{
+.titulo_sobre h5 {
     color: #666666;
 }
 
@@ -235,20 +239,21 @@ main{
     margin: 40px;
     padding: 10px;
 }
-.paragrafo_sobre p{
+
+.paragrafo_sobre p {
     font-size: 18pt;
 }
 
-.planos{
+.planos {
     display: flex;
     justify-content: center;
     margin: 20px;
 }
 
-.botao-planos{
+.botao-planos {
     cursor: pointer;
     font-size: 14pt;
-    background-color:#b22134;
+    background-color: #b22134;
     color: #f8f7f9;
     border: 0;
     border-radius: 30px;
@@ -256,26 +261,29 @@ main{
     width: 250px;
     padding: 5px;
 }
+
 .botao-planos:hover {
     background-color: red;
     text-decoration: none;
-    transition:all 0.3S ease-in-out;
+    transition: all 0.3S ease-in-out;
 }
 
-.paragrafo_sobre h3{
+.paragrafo_sobre h3 {
     color: rgb(62, 30, 218);
     margin-top: 70px;
 }
 
-.img_sobre{
+.img_sobre {
 
     align-items: center;
     width: 100%;
 }
-.img_sobre img{
+
+.img_sobre img {
     width: 450px;
     margin-left: 90px;
 }
+
 .espacamento {
     width: 100vh;
     height: 100vh;
@@ -290,7 +298,7 @@ main{
 .paragrafo_banner {
     color: #fff;
     font-size: 18px;
-    margin-top:40px;
+    margin-top: 40px;
     margin-bottom: 40px;
     max-width: 500px;
 }
@@ -302,43 +310,46 @@ a .botao {
 
 .botao {
     cursor: pointer;
-    background-color:#b22134;
+    background-color: #b22134;
     color: #f8f7f9;
     border: 0;
     border-radius: 20px;
     height: 40px;
     width: 200px;
     padding: 10px;
-   
+
 }
 
 
 .botao:hover {
     background-color: red;
     text-decoration: none;
-    transition:all 0.3S ease-in-out;
+    transition: all 0.3S ease-in-out;
 }
 
 
 /*LISTA DE PRODUTOS*/
-section.container1 div.descricao_produto{
+section.container1 div.descricao_produto {
     transition: .1s;
     height: 0;
     overflow: hidden;
 }
-section.container1 div.descricao_produto.ativo{
+
+section.container1 div.descricao_produto.ativo {
     height: 80%;
     transition: .1s;
 }
-section.container1 div.descricao_produto p{
+
+section.container1 div.descricao_produto p {
     transition: .1s;
     padding: 20px;
 }
-div.produto div.produto-titulo h3{
+
+div.produto div.produto-titulo h3 {
     font-weight: 600;
 }
 
-div.produto{
+div.produto {
     border: 1px solid #c2c2c2;
     padding: 10px;
     cursor: pointer;
@@ -346,18 +357,21 @@ div.produto{
     border-radius: 5px;
 
 }
-div.produto div.ajuste-produto{
+
+div.produto div.ajuste-produto {
     flex-direction: row;
     display: flex;
     justify-content: space-between;
     margin-left: 5px;
 
-}       
-div.produto div.ajuste-produto div.ajuste-qtd{
+}
+
+div.produto div.ajuste-produto div.ajuste-qtd {
     display: flex;
     flex-direction: row;
     margin: 5px;
 }
+
 div.produto div.coluna-10 {
     width: 15%;
     overflow: hidden;
@@ -367,40 +381,163 @@ div.produto div.coluna-10 {
     flex-direction: column;
     align-items: center;
 
- }
- /*divisão dos blocos dentro da descrição*/
- .linha{
+}
+
+/*divisão dos blocos dentro da descrição*/
+.linha {
     justify-content: center;
     display: flex;
     flex-flow: row wrap;
-    padding:10px;
+    padding: 10px;
 }
-.lote{
+
+.lote {
     display: flex;
     margin: auto 20px;
     flex-direction: row;
     justify-content: space-around;
 
 }
-.lote-img{
+
+.lote-img {
     width: 32px;
     background-image: url(../img/caixa-aberta.png);
     background-size: contain;
     background-repeat: no-repeat;
     height: 32px;
     margin: 5px;
+    position: relative;
 
 }
-.seta{
+
+.lote-img::after {
+    content: "Ver lotes";
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    /* Move o texto para baixo */
+    left: 50%;
+    /* Coloca o texto no centro horizontalmente */
+    transform: translateX(-50%);
+    /* Move o texto para o centro exato */
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.lote-img:hover::after {
+    display: block;
+}
+
+
+.editar {
+    width: 27px;
+    background-image: url(../img/editar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 27px;
+    margin: 5px;
+    position: relative;/
+}
+
+.editar::after {
+    content: "Editar Cadastro";
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    /* Move o texto para baixo */
+    left: 50%;
+    /* Coloca o texto no centro horizontalmente */
+    transform: translateX(-50%);
+    /* Move o texto para o centro exato */
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.editar:hover::after {
+    display: block;
+}
+
+
+
+.seta {
     width: 27px;
     background-image: url(../img/seta-para-cima.png);
     background-size: contain;
     background-repeat: no-repeat;
     height: 27px;
     margin: 5px;
+    position: relative;/
 }
 
-.separador::before{
+.seta::after {
+    content: "Estoque Alto";
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    /* Move o texto para baixo */
+    left: 50%;
+    /* Coloca o texto no centro horizontalmente */
+    transform: translateX(-50%);
+    /* Move o texto para o centro exato */
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.seta:hover::after {
+    display: block;
+}
+
+.setabaixo {
+    width: 27px;
+    background-image: url(../img/seta-para-baixo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 27px;
+    margin: 5px;
+    position: relative;
+}
+
+
+.setabaixo::after {
+    content: "Estoque Baixo";
+    display: none;
+    position: absolute;
+    bottom: -50px;
+    /* Move o texto para baixo */
+    left: 50%;
+    /* Coloca o texto no centro horizontalmente */
+    transform: translateX(-30%);
+    /* Move o texto para o centro exato */
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.setabaixo:hover::after {
+    display: block;
+}
+
+
+.separador::before {
     width: 2px;
     height: 40px;
     position: absolute;
@@ -408,20 +545,23 @@ div.produto div.coluna-10 {
     background-color: #b4b4b4;
     margin-left: 35px;
 }
+
 /*botoes*/
-.botoes{
+.botoes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
 }
-.btn-excluir{
+
+.btn-excluir {
     border: none;
     background: none;
     color: blue;
     cursor: pointer;
 }
-.btn-retirar{
+
+.btn-retirar {
     border: 1px solid red;
     background-color: transparent;
     border-radius: 5px;
@@ -433,20 +573,23 @@ div.produto div.coluna-10 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.btn-excluir:hover{
+
+.btn-excluir:hover {
     color: #7676f5;
 }
-.btn-adicionar:hover{
+
+.btn-adicionar:hover {
     background-color: #f55e5e;
     border: #f55e5e;
     transform: scale(1.1);
 }
-.btn-retirar:hover{
+
+.btn-retirar:hover {
     background-color: #e3e1e1;
     transform: scale(1.1);
 }
 
-.btn-adicionar{
+.btn-adicionar {
     border: 1px solid red;
     background-color: red;
     border-radius: 5px;
@@ -457,6 +600,7 @@ div.produto div.coluna-10 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
 /*alinhamento no centro*/
 .alinhar_cadastro_nome {
     display: flex;
@@ -464,11 +608,13 @@ div.produto div.coluna-10 {
     justify-content: space-between;
     padding: 10px;
 }
+
 .centralizar_cadastro {
     width: 80%;
     height: 100%;
     justify-content: center;
 }
+
 section.mover_all_cadastro {
     justify-content: center;
     align-items: center;
@@ -478,7 +624,7 @@ section.mover_all_cadastro {
 
 /*BARRA DE PESQUISA*/
 
-.search{
+.search {
     display: flex;
     align-items: flex-end;
     border: 1px solid #c2c2c2;
@@ -490,7 +636,7 @@ section.mover_all_cadastro {
     height: 35px;
 }
 
-#searchInput{
+#searchInput {
     padding: 8px;
     border: none;
     background-color: transparent;
@@ -498,16 +644,18 @@ section.mover_all_cadastro {
     outline: none;
 }
 
-.search label{
+.search label {
     padding-left: 5px;
 }
-.informacoes-pesquisa-filtro{
+
+.informacoes-pesquisa-filtro {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 0;
 }
-.pesquisa-filtro-esquerdo{
+
+.pesquisa-filtro-esquerdo {
     display: flex;
     flex-direction: row;
 }
@@ -515,7 +663,8 @@ section.mover_all_cadastro {
 
 
 /* Adicione estas regras no seu arquivo CSS */
-#bg-modal, #bg-modal1 {
+#bg-modal,
+#bg-modal1 {
     display: none;
     position: fixed;
     top: 0;
@@ -527,10 +676,12 @@ section.mover_all_cadastro {
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    z-index: 1000; /* Certifique-se de que o z-index é maior do que outros elementos */
+    z-index: 1000;
+    /* Certifique-se de que o z-index é maior do que outros elementos */
 }
 
-#bg-modal.show, #bg-modal1.show {
+#bg-modal.show,
+#bg-modal1.show {
     display: flex;
     opacity: 1;
 }
@@ -540,33 +691,34 @@ section.mover_all_cadastro {
     width: 392px;
     height: 314px;
     background-color: white;
-    opacity: 1; 
+    opacity: 1;
     text-align: center;
-    padding: 35px; 
+    padding: 35px;
     position: relative;
 }
 
 
-.pop-do-dois.show, .modal-contact.show {
+.pop-do-dois.show,
+.modal-contact.show {
     transform: scale(1);
 }
 
-.paragrafo-p-vermelho{
-    color:red;
+.paragrafo-p-vermelho {
+    color: red;
     font-size: 10pt;
     margin: 10px;
 }
 
-.close{
+.close {
     position: absolute;
     top: 10px;
     right: 15px;
     cursor: pointer;
-    
+
 }
 
 
-.botao-cancelar{
+.botao-cancelar {
     border: 1px solid red;
     background-color: #fff;
     color: red;
@@ -574,35 +726,37 @@ section.mover_all_cadastro {
     width: 120px;
     height: 35px;
     cursor: pointer;
-    transition:all 0.3S ease-in-out;
+    transition: all 0.3S ease-in-out;
     margin-right: 5px;
 
 
-    
+
 }
-.botao-cancelar:hover{
+
+.botao-cancelar:hover {
     background-color: #e3e1e1;
     transform: scale(1.1);
 }
 
-.botao-excluir{
+.botao-excluir {
     border: 1px solid red;
     background-color: red;
     color: #fff;
     border-radius: 5px;
     width: 120px;
     height: 35px;
-    cursor:pointer;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin-right: 5px;
 
 }
 
-.botao-excluir:hover{
+.botao-excluir:hover {
     background-color: #f55e5e;
-    border:#f55e5e;
+    border: #f55e5e;
     transform: scale(1.1);
 }
+
 .buttonpopupclose {
     border: none;
     color: red;
@@ -614,21 +768,21 @@ section.mover_all_cadastro {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
-  
+}
+
 
 
 
 .inserir {
-    display:flex;
+    display: flex;
 
     justify-content: center;
 }
 
-#pop-dois{
+#pop-dois {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
     display: flex;
@@ -642,28 +796,29 @@ section.mover_all_cadastro {
 
 
 
-.pop-do-dois{
+.pop-do-dois {
     border-radius: 8px;
     width: 392px;
     height: 354px;
     background-color: white;
-    opacity: 1; 
+    opacity: 1;
     text-align: center;
-    padding: 35px; 
+    padding: 35px;
     position: relative;
-    
+
 }
-.pop-do-dois h1{
+
+.pop-do-dois h1 {
     margin: 10px;
     font-weight: 400;
     width: 100%;
 }
 
 
-.inserir input{
+.inserir input {
     width: 100px;
     margin: 5px;
-    border-radius:6px;
+    border-radius: 6px;
     border: 1px solid grey;
     height: 20px;
 }
@@ -671,7 +826,7 @@ section.mover_all_cadastro {
 
 
 
-.botao-limpar{
+.botao-limpar {
     border: 1px solid #832c38;
     background-color: #832c38;
     color: #fff;
@@ -679,7 +834,7 @@ section.mover_all_cadastro {
     width: 120px;
     height: 35px;
     cursor: pointer;
-    transition:all 0.3S ease-in-out;
+    transition: all 0.3S ease-in-out;
     margin-right: 5px;
 }
 
@@ -687,9 +842,9 @@ section.mover_all_cadastro {
 
 
 
-.botao-limpar:hover{
-    background-color:#f64545;
-    border:#f64545;
+.botao-limpar:hover {
+    background-color: #f64545;
+    border: #f64545;
     transform: scale(1.1);
 
 }
@@ -697,14 +852,14 @@ section.mover_all_cadastro {
 
 
 
-.botao-adicionar{
+.botao-adicionar {
     border: 1px solid blue;
     background-color: blue;
     color: #fff;
     border-radius: 5px;
     width: 120px;
     height: 35px;
-    cursor:pointer;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin-right: 5px;
 }
@@ -712,9 +867,288 @@ section.mover_all_cadastro {
 
 
 
-.botao-adicionar:hover{
+.botao-adicionar:hover {
     background-color: #11c0e3;
-    border:#11c0e3;
+    border: #11c0e3;
     transform: scale(1.1);
+
+}
+
+#border_nav:hover {
+    background-color: #6839C5;
+}
+
+.principal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 15px;
+}
+
+.moveProdutos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+#produtos {
+    text-align: left;
+    width: 80%;
+}
+
+.barraestoque {
+    width: 80%;
+    height: 50px;
+    background-color: #7E46F0;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#descricao {
+    font-size: 25px;
+    border: 1px solid white;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#cadastro_nome {
+    width: 80%;
+    height: 40px;
+}
+
+.mover_cadastro_nome {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+}
+
+.centralizar_cadastro {
+    width: 60%;
+    height: 100%;
+}
+
+.mover_all_cadastro {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.alinhar_cadastro_nome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#imgCadastro {
+    width: 175px;
+    height: 175px;
+    background-color: none;
+    align-self: center;
+}
+
+.boxCadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.second_mover_cadastro_nome {
+    margin-top: 50px;
+}
+
+#descricao_pd {
+    width: 100%;
+    height: 100px;
+}
+
+#data {
+    width: 20%;
+    height: 40px;
+}
+
+/*Home*/
+
+.botao {
+    background-color: #800080;
+    color: #f8f7f9;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 10%;
+    width: 320px;
+}
+
+.botao a {
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.botao:hover {
+    background-color: #6a046a;
+    text-decoration: none;
+    text-decoration: underline;
+
+}
+
+.embreve {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.4;
+    align-items: center;
+}
+
+.alinhar_custo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 80%;
+
+}
+
+#seta {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+}
+
+.estoque_baixo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#seta_cima {
+    width: 30px;
+    height: 30px;
+}
+
+.estoque_alto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custoprimeiro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 80%;
+
+}
+
+.margin_custo {
+    margin-top: 50px;
+}
+
+#margin_valor {
+    width: 450px;
+    height: 40px;
+}
+
+#margin_valor2 {
+    width: 450px;
+    height: 40px;
+}
+
+@media (max-width:1450px) {
+    .custoprimeiro {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+}
+
+#alinharqnt {
+    margin-top: 50px;
+}
+
+#valor_unitario2 {
+    width: 300px;
+    height: 40px;
+}
+
+#cadastro_nome2 {
+    width: 300px;
+    height: 40px;
+}
+
+#botao_second_nav {
+    width: 100%;
+    height: 100%;
+    background-color: #7E46F0;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#botao_second_nav:hover {
+    background-color: #7E46F0;
+    transform: translate(0px, -5px);
+}
+
+.second_nav ul {
+    list-style: none;
+    background: #242136;
+    border: none;
+    width: 100%;
+
+
+}
+
+.second_nav ul li {
+    list-style: none;
+    border: 1px solid #6839C5;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    width: 100%;
+    position: relative;
+    transition: all ease-in-out 70ms;
+    border: none;
+    color: white;
+    background: #242136;
+
+}
+
+.second_nav ul li:hover {
+    background: #7E46F0;
+    cursor: pointer;
+
+}
+
+.second_nav ul ul {
+    display: none;
+}
+
+.second_nav ul li:hover>ul {
+    display: block;
+    background: #7E46F0;
+
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 
 }

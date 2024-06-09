@@ -59,9 +59,9 @@ main{
 }
 
 #logo {
-    width: 200px;
-    height: 200px;
-    background-image: url(../img/se.png);
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/TESTE_LOGO_STOCKEZZE1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -298,4 +298,67 @@ section.mover_all_cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#botao_second_nav {
+    width: 100%;
+    height: 100%;
+    background-color: #7E46F0;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#botao_second_nav:hover {
+    background-color: #7E46F0;
+    transform: translate(0px, -5px);
+}
+
+.second_nav ul{
+    list-style: none;
+    background: #242136;
+    border: none;
+    width: 100%;
+    
+
+}
+
+.second_nav ul li{
+    list-style: none;
+    border: 1px solid #6839C5;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    width: 100%;
+    position: relative;
+    transition: all ease-in-out 70ms;
+    border: none;
+    color: white;
+    background: #242136;
+    
+}
+
+.second_nav ul li:hover{
+    background: #7E46F0;
+    cursor: pointer;
+
+}
+
+.second_nav ul ul{
+    display: none;
+}
+
+.second_nav ul li:hover>ul{
+    display: block;
+    background: #7E46F0;
+    
+    
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    
 }

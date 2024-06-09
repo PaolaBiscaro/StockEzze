@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cadastrolote.css">
+    <title>Stockezze</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navegacao">
+            <div class="fotos_principal">
+                <a href="{{url_for('home')}}">
+                    <div id="stock"></div>
+                </a>
+                <div id="logo"> </div>
+            </div>
+        </nav>
+
+        <section class="second_nav">
+            <div class="escritas">
+                <ul>
+                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                </ul>
+                <ul>
+                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                </ul>
+                <ul>
+                    <li>Cadastros
+                        <ul>
+                            <a href="{{ url_for('cadastro_lote') }}">
+                                <li>Cadastro de Lote</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_produto') }}">
+                                <li>Cadastro de Produto</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_fornecedor') }}">
+                                <li>Cadastro de Fornecedor</li>
+                            </a>
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
+
+                </ul>
+
+            </div>
+        </section>
+    </header>
+    <main>
+
+        <section class="mover_all_cadastro">
+            <div class="centralizar_cadastro">
+                <div class="titulo">
+                    <h1>Cadastrar Novo Lote</h1>
+                    <h5>Insira as informações sobre o novo lote do produto: </h5>
+                </div>
+                <form method="post" action="{{ url_for('cadastro_lote') }}">
+                    <div class="forms-lote">
+                        <div class="cod-pro-barra">
+                            <div class="codigo-lote">
+                                <label for="codigo">
+                                    <h3>Código Lote:</h3>
+                                </label>
+                                <input type="text" id="codigo" name="codigo" placeholder="Digite o código..."><br>
+                                <label for="numero">
+                                    <h3>Número Lote:</h3><!--Retirar autoincrement-->
+                                </label>
+                                <input type="text" id="numero" name="numero" placeholder="Digite o numero????..."><br>
+
+                                <div class="tipo-produto">
+                                    <label for="tipo_produto">
+                                        <h3>Tipo de Produto (Retirar): </h3> <!--Retirar-->
+                                    </label>
+                                    <input type="text" id="tipo_produto" name="tipo_produto"
+                                        placeholder="Digite o nome do produto"><br>
+                                    <label for="produto_id">
+                                        <h3>Escolha o produto desse lote: </h3>
+                                    </label>
+                                    <select id="produto_id" name="produto_id" required>
+                                        {% for produto in produtos %}
+                                        <option value="{{ produto[0] }}">{{ produto[1] }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="preco">
+                            <h1>Custo (Preço):</h1>
+                        </div>
+                        <div class="valores">
+                            <div class="valor-uni">
+                                <label for="valor_unitario">
+                                    <h3>Valor Unitário: (Lote)</h3>
+                                </label>
+                                <input type="text" id="valor_unitario" name="valor_unitario"
+                                    placeholder="Ex: R$12,34"><br>
+                            </div>
+                            <div class="valor-lote">
+                                <label for="valor_lote">
+                                    <h3>Valor Lote: (Automático)</h3>
+                                </label>
+                                <input type="text" id="valor_lote" name="valor_lote" placeholder="Ex: R$123,40"><br>
+                            </div>
+                        </div>
+
+                        <div class="quantidade">
+                            <h1>Quantidade:</h1>
+                        </div>
+                        <div class="qtd-estoque">
+                            <div class="qtd-lote">
+                                <label for="quantidade">
+                                    <h3>Qtd por lote</h3>
+                                </label>
+                                <input type="text" id="quantidade" name="quantidade" placeholder="Ex: R$123,40"><br>
+                            </div>
+                            <div class="estoque-min">
+                                <label for="estoque_minimo">
+                                    <h3>Estoque mínimo</h3>
+                                </label>
+                                <input type="number" id="estoque_minimo" name="estoque_minimo"
+                                    placeholder="Estoque Mínimo"><br>
+                            </div>
+                            <div class="estoque-alto-baixo">
+                                <div class="seta-baixo">
+                                    <img src="../static/img/seta-para-baixo.png">
+                                    <h3>Estoque baixo</h3>
+                                </div>
+                                <div class="seta-alto">
+                                    <img src="../static/img/seta-para-cima.png">
+                                    <h3>Estoque alto</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="titulos">
+                            <div class="dt-titulo">
+                                <h1>Datas:</h1>
+                            </div>
+                            <div class="obs-titulo">
+                                <h1>Observação: </h1>
+                            </div>
+                        </div>
+
+                        <div class="data-obs">
+                            <div class="datas">
+                                <label for="data_fabricacao">
+                                    <h3>Data de Fabricação: </h3>
+                                </label>
+                                <input type="date" id="data_fabricacao" name="data_fabricacao"><br>
+
+                                <label for="data_validade">
+                                    <h3>Data de Validade: </h3>
+                                </label>
+                                <input type="date" id="data_validade" name="data_validade"><br>
+                            </div>
+
+                            <div class="obs">
+
+                                <div class="obs-conteudo">
+                                    <div class="vermelho">
+                                        <img src="../static/img/circulo-vermelho.png" alt="" srcset="">
+                                        <h3>Indica Produto vencido (1 dia após da data informada)</h3>
+                                    </div>
+                                    <div class="amarelo">
+                                        <img src="../static/img/circulo-amarelo.png" alt="" srcset="">
+                                        <h3>Indica Produto prestes a vencer (15 dias de antecedência)</h3>
+                                    </div>
+                                    <div class="verde">
+                                        <img src="../static/img/circulo-verde.png" src="" alt="" srcset="">
+                                        <h3>Indica Produto dentro da validade (+16 dias)</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fornecedor-titulo">
+                            <h1>Fornecedor:</h1>
+                            <div class="marca-fornecedor">
+
+
+
+                                <h3>Marca:</h3>
+                                <select id="fornecedor_id" name="fornecedor_id" required>
+                                    {% for fornecedor in fornecedores %}
+                                    <option value="{{ fornecedor[0] }}">{{ fornecedor[1] }}</option>
+                                    {% endfor %}
+                                </select><br>
+                                <!-- <select name="marca" id="marca-f">
+                                <option value="">Nome da Marca</option>
+                                <option value="">Italac</option>
+                                <option value="">Sazon</option>
+                            </select> -->
+                            </div>
+                            <div class="info-fornecedor">
+                                <a href="{{ url_for('cadastro_fornecedor') }}">Ver mais informações sobre o
+                                    fornecedor</a>
+                            </div>
+                        </div>
+
+                        <div class="botoes-limpar-add">
+                            <div class="limpar-campos">
+                                <button type="reset" class="btn-limparCampos">Limpar Campos</button>
+                            </div>
+                            <div class="add-lote">
+                                <button class="btn-addLote" type="submit">Adicionar Lote</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

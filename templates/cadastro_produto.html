@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cadastroproduto.css">
+    <title>Stockezze</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navegacao">
+            <div class="fotos_principal">
+                <a href="{{url_for('home')}}">
+                    <div id="stock"></div>
+                </a>
+                <div id="logo"> </div>
+            </div>
+        </nav>
+
+        <section class="second_nav">
+            <div class="escritas">
+                <ul>
+                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                </ul>
+                <ul>
+                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                </ul>
+                <ul>
+                    <li>Cadastros
+                        <ul>
+                            <a href="{{ url_for('cadastro_lote') }}">
+                                <li>Cadastro de Lote</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_produto') }}">
+                                <li>Cadastro de Produto</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_fornecedor') }}">
+                                <li>Cadastro de Fornecedor</li>
+                            </a>
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
+
+                </ul>
+
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="mover_all_cadastro">
+            <div class="centralizar_cadastro">
+                <div class="titulo">
+                    <h1>Cadastrar Novo Produto</h1>
+                    <h3>Adicione um novo produto ao seu estoque:</h3>
+                </div>
+                <form method="post" action="{{ url_for('cadastro_produto') }}">
+                    <div class="forms-nomeProduto">
+                        <div class="nomeProdutoBox">
+                            <label for="nome">
+                                <h3>Nome do produto:</h3>
+                            </label>
+                            <input type="text" id="nome" name="nome" class="nomeProduto"
+                                placeholder="Digite o nome do produto" required><br>
+                        </div>
+                        <div class="cod-barras">
+                            <h4>Código de Barras:</h4>
+                            <a href="{{url_for('leitor_barras')}}"> <img src="../static/img/camera.png" width="100px"
+                                    alt="Clique para ler o código de barras"></a>
+
+                            <div class="nomeProdutoBox">
+                                <label for="nome">
+                                    <h3>Código do Produto:</h3>
+                                </label>
+                                <input type="text" id="codigo" name="codigo" class="nomeProduto"
+                                    placeholder="Digite o código do Produto" required><br>
+                            </div>
+                        </div>
+
+                        <div class="marca-cnpj">
+                            <div class="marca">
+                                <label for="descricao">
+                                    <h3>Descrição do produto:</h3>
+                                </label>
+                                <input type="text" id="descricao" name="descricao"
+                                    placeholder="Digite a descrição do produto" required><br>
+                            </div>
+                        </div>
+
+
+                        <div class="botoes-ex-sal">
+                            <div class="excluir-cad">
+                                <button type="button" class="excluir" onclick="excluirCadastro()">Excluir
+                                    cadastro</button>
+                            </div>
+                            <div class="salvar-cad">
+                                <button type="submit" class="salvar-cad-forne">Salvar Cadastro</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="../static/js/script3.js"></script>
+    <footer>
+    </footer>
+</body>
+
+</html>

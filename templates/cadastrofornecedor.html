@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/cadastrofornecedor.css">
+    <title>Stockezze</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navegacao">
+            <div class="fotos_principal">
+                <a href="{{url_for('home')}}">
+                    <div id="stock"></div>
+                </a>
+                <div id="logo"> </div>
+            </div>
+        </nav>
+
+        <section class="second_nav">
+            <div class="escritas">
+                <ul>
+                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                </ul>
+                <ul>
+                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                </ul>
+                <ul>
+                    <li>Cadastros
+                        <ul>
+                            <a href="{{ url_for('cadastro_lote') }}">
+                                <li>Cadastro de Lote</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_produto') }}">
+                                <li>Cadastro de Produto</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_fornecedor') }}">
+                                <li>Cadastro de Fornecedor</li>
+                            </a>
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
+
+                </ul>
+
+            </div>
+        </section>
+    </header>
+    <main>
+        <form method="post" action="{{ url_for('cadastro_fornecedor') }}">
+            <section class="mover_all_cadastro">
+                <div class="centralizar_cadastro">
+                    <div class="titulo">
+                        <h1>Cadastrar Fornecedor</h1>
+                        <h3>Adicione um novo produto ao seu estoque:
+                        </h3>
+                    </div>
+
+                    <div class="forms-fornecedor">
+                        <div class="fornecedor">
+                            <label for="fornecedor">
+                                <h3>Fornecedor:</h3>
+                            </label>
+                            <input type="text" id="nome" name="nome" placeholder="Nome"><br>
+                        </div>
+
+                        <div class="marca-cnpj">
+                            <div class="marca">
+                                <label for="marca">
+                                    <h3>Marca:</h3>
+                                </label>
+                                <input type="text" id="marca" name="marca" placeholder="Nome da marca"><br>
+                            </div>
+
+                            <div class="cnpj">
+                                <label for="cnpj">
+                                    <h3>CNPJ:</h3>
+                                </label>
+                                <input type="text" id="cnpj" name="cnpj" placeholder="XX.XXX.XXX/XXXX-XX"
+                                    class="cnpj-input"><br>
+                            </div>
+                        </div>
+
+                        <div class="estado">
+                            <div class="rua-bairro">
+                                <label for="rua">
+                                    <h3>Endereço:</h3>
+                                </label>
+                                <input type="text" id="rua" name="rua" placeholder="Rua"><br>
+                                <input type="text" id="bairro" name="bairro" placeholder="Bairro"><br>
+                            </div>
+
+                            <div class="cidade-uf">
+                                <div class="cidade">
+                                    <input type="text" id="cidade" name="cidade" placeholder="Cidade"><br>
+                                </div>
+                                <div class="uf">
+                                    <input type="text" id="estado" name="estado" placeholder="UF"><br>
+                                </div>
+                            </div>
+                            <div class="cep">
+                                <input type="text" id="cep" name="cep" placeholder="CEP"><br>
+                            </div>
+
+                        </div>
+                        <div class="contatos">
+                            <h3>
+                                Contatos (e-mails, telefones):
+                            </h3>
+                        </div>
+                        <div class="email-telefone">
+                            <div class="email">
+                                <input type="email" id="email" name="email" placeholder="E-mail"><br>
+                                <button class="add-email">+ Adicione mais um e-mail</button>
+                            </div>
+                            <div class="telefone">
+                                <input type="tel" id="telefone" name="telefone" placeholder="Telefone"><br>
+                                <button class="add-tel">+ Adicione mais um telefone</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botoes-ex-sal">
+                        <div class="excluir-cad">
+                            <button class="excluir">Excluir cadastro</button>
+                        </div>
+                        <div class="salvar-cad">
+                            <button class="salvar-cad-forne">Salvar Cadastro de Fornecedor</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </form>
+    </main>
+    <script src="../static/js/script3.js"></script>
+
+</body>
+
+</html>

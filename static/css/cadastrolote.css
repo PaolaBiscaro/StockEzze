@@ -1,0 +1,507 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #f8f7f9;
+}
+
+main{
+    min-width: 320px;
+}
+
+
+.planofundo2 {
+    background-color: #242136;
+    height: 100%;
+}
+
+.telainteira {
+    background-image: url(../img/IMAGEM_ESTOQUE.png);
+    background-size:cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    background-color: #242136;
+    padding-top: 70px;
+    padding-left: 10%;
+}
+
+.texto {
+    color: #fff;
+}
+
+
+/*Navegação Menu principal*/
+
+.navegacao {
+    width: 100%;
+    height: 80px;
+    min-width: 320px;
+    background-color: #242136;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /*position: fixed;*/
+
+}
+
+.fotos_principal {
+    width: 80%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/TESTE_LOGO_STOCKEZZE1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+#stock {
+    width: 200px;
+    height: 100px;
+    background-image: url(../img/stock.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.teste {
+    color: blueviolet;
+}
+
+#imagem {
+    width: 500px;
+    height: 500px;
+}
+
+.mover_imagem {
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.second_nav {
+    height: 50px;
+    width: 100%;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    /*box-shadow: 0 -5px 3px -5px #333;*/
+}
+
+.escritas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.border_nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.border_nav:link {
+    text-decoration: none;
+}
+
+.botao_second_nav {
+    width: 100%;
+    height: 100%;
+    background-color: #242136;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.botao_second_nav:hover {
+    background-color: #6839C5;
+    transform: translate(0px, -5px);
+    /*box-shadow: 2px 5px 10px black;*/
+}
+
+#botao_second_nav {
+    width: 100%;
+    height: 100%;
+    background-color: #7E46F0;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#botao_second_nav:hover {
+    background-color: #7E46F0;
+    transform: translate(0px, -5px);
+}
+
+.second_nav ul{
+    list-style: none;
+    background: #242136;
+    border: none;
+    width: 100%;
+    
+
+}
+
+.second_nav ul li{
+    list-style: none;
+    border: 1px solid #6839C5;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    width: 100%;
+    position: relative;
+    transition: all ease-in-out 70ms;
+    border: none;
+    color: white;
+    background: #242136;
+    
+}
+
+.second_nav ul li:hover{
+    background: #7E46F0;
+    cursor: pointer;
+
+}
+
+.second_nav ul ul{
+    display: none;
+}
+
+.second_nav ul li:hover>ul{
+    display: block;
+    background: #7E46F0;
+    
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    
+}
+/*FIM DA NAV*/
+
+/*alinhamento no centro*/
+.alinhar_cadastro_nome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.centralizar_cadastro {
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+}
+section.mover_all_cadastro {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+/*Estilização do Forms*/
+.forms-lote{
+    margin: 40px;
+}
+.titulo{
+    margin: 40px;
+}
+
+.cod-pro-barra{
+    display: flex;
+    flex-direction: row;
+}
+
+.codigo-lote{
+    width: 90%;
+}
+.codigo-lote input{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.tipo-produto{
+    margin-top: 30px;
+}
+.tipo-produto select{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.cod-barras{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+}
+.cod-barras img{
+    width: 150px;
+    cursor: pointer;
+}
+.cod-barras h4{
+    margin-top: 20px;
+}
+
+.valores{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.valor-uni, .valor-lote{
+    width: 50%;
+}
+.valor-lote{
+    margin-left: 50px;
+}
+.valor-uni input{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.valor-lote input{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.qtd-estoque, .estoque-alto-baixo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.qtd-lote, .estoque-min{
+    width: 30%;
+}
+.qtd-lote{
+    margin-right: 70px;
+}
+.qtd-lote input{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.estoque-min input{
+    width: 20vw;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.estoque-alto-baixo h3{
+    display: flex;
+    align-items: center;
+}
+.seta-alto, .seta-baixo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.seta-baixo img{
+    width: 50px;
+    height: 50px;
+}
+.seta-alto img{
+    width: 50px;
+    height: 50px;
+}
+
+.qtd{
+    margin-top: 20px;
+}
+.titulos{
+    display: flex;
+    flex-direction: row;
+}
+.dt-titulo, .obs-titulo{
+  width: 50%;
+  margin-top: 20px;
+}
+.data-obs{
+    display: flex;
+    flex-direction: row;
+}
+.datas{
+    width: 50%;
+    padding-top: 20px;
+}
+
+
+.datas input{
+    width: 35vw;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.obs{
+    width: 50%;
+}
+.obs-conteudo{
+    width: 37vw;
+    margin: 30px 0 0 0;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.vermelho, .amarelo, .verde{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.obs-conteudo img{
+    width: 28px;
+    margin-right: 10px;
+}
+.fornecedor-titulo{
+    margin-top: 50px;
+}
+.marca-fornecedor{
+    margin-top: 20px;
+}
+.marca-fornecedor select{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.info-fornecedor{
+    margin-top: 10px;
+    color: blue;
+}
+
+/*BOTÕES*/
+
+.botoes-limpar-add{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.limpar-campos, .add-lote{
+    width: 50%;
+
+}
+.add-lote{
+    margin-left: 50px;
+}
+.btn-limparCampos{
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid red;
+    color: red;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12pt;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-limparCampos:hover{
+    background-color:#f64545;
+    border:#f64545;
+    color: #fff;
+    transform: scale(1.1);
+
+}
+
+.btn-addLote{
+    background-color: blue;
+    border: 1px solid blue;
+    color: #fff;
+    width: 100%;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12pt;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-addLote:hover{
+    background-color: #11c0e3;
+    border:#11c0e3;
+    transform: scale(1.1);
+
+}
+
+/*PLACEHOLDER*/
+
+#clote::placeholder{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #2c2b2b;
+    font-size: 12pt;
+ }
+ #unitario::placeholder{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #2c2b2b;
+    font-size: 12pt;
+ }
+ #vl-lote::placeholder{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #2c2b2b;
+    font-size: 12pt;
+ }
+ #quanti-lote::placeholder{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #2c2b2b;
+    font-size: 12pt;
+ }
+ #quanti-min::placeholder{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #2c2b2b;
+    font-size: 12pt;
+ }

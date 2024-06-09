@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/cadastroproduto.css">
     <link rel="icon" href="../static/img/se.png">
     <title>StockEzze</title>
 </head>
 
 <body>
-    <header >
+    <header>
         <nav class="navegacao">
             <div class="fotos_principal">
                 <a href="{{url_for('home')}}">
@@ -20,20 +21,34 @@
             </div>
         </nav>
 
-
         <section class="second_nav">
             <div class="escritas">
-                <a href="{{ url_for('meu_estoque') }}" class="border_nav">
-                    <button class="botao_second_nav">Estoque</button></a>
+                <ul>
+                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                </ul>
+                <ul>
+                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                </ul>
+                <ul>
+                    <li>Cadastros
+                        <ul>
+                            <a href="{{ url_for('cadastro_lote') }}">
+                                <li>Cadastro de Lote</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_produto') }}">
+                                <li>Cadastro de Produto</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_fornecedor') }}">
+                                <li>Cadastro de Fornecedor</li>
+                            </a>
 
-                <a href="{{ url_for('leitor_barras') }}" class="border_nav">
-                    <button class="botao_second_nav">Leitor de barras</button></a>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
 
-                <a href="{{ url_for('cadastro_produtos') }}" class="border_nav">
-                    <button class="botao_second_nav">Cadastro Produtos</button></a>
-
-                <a href="{{ url_for('relatorio') }}" class="border_nav">
-                    <button class="botao_second_nav">Relatório</button></a>
+                </ul>
 
             </div>
         </section>
@@ -45,60 +60,63 @@
                 <h1>Seu Estoque a um Scanner de Distância </h1>
             </div>
             <div class="paragrafo_banner">
-                <p>Tenha um geranciador de estoque simples e rápido para organizar e melhorar a gestão de seus produtos! </p>
+                <p>Tenha um geranciador de estoque simples e rápido para organizar e melhorar a gestão de seus produtos!
+                </p>
             </div>
 
-            <a href="">
+            <a href="{{url_for('meu_estoque')}}">
                 <button class="botao">Acessar seu Estoque</button>
             </a>
         </div>
         <section class="mover_all_cadastro">
             <div class="centralizar_cadastro">
-        <div class="container">
-            <div class="titulo_sobre">
-                <h1>Por que usar o StockEzze?</h1>
-                <h5>Veja como podemos te ajudar</h5>
-            </div>
-            <div class="ajuste">
-            <div class="texto-esquerdo">
-                <div class="paragrafo_sobre">
-                    <p>
-                        Além dos nossos filtros para classificar os produtos por data de validade, por ordem alfabética e pelo código de identificação do produto. </br> Temos um método de cadastro rápido e fácil de usar, atráves do scanner do código de barras do produto!
+                <div class="container">
+                    <div class="titulo_sobre">
+                        <h1>Por que usar o StockEzze?</h1>
+                        <h5>Veja como podemos te ajudar</h5>
+                    </div>
+                    <div class="ajuste">
+                        <div class="texto-esquerdo">
+                            <div class="paragrafo_sobre">
+                                <p>
+                                    Além dos nossos filtros para classificar os produtos por data de validade, por ordem
+                                    alfabética e pelo código de identificação do produto. </br> Temos um método de
+                                    cadastro rápido e fácil de usar, atráves do scanner do código de barras do produto!
 
-                    </p>
-                    <h3>Tudo para deixar o seu estoque organizado!</h3>
+                                </p>
+                                <h3>Tudo para deixar o seu estoque organizado!</h3>
+                            </div>
+                        </div>
+                        <div class="imagem-direita">
+                            <div class="img_sobre">
+                                <img src="../static/img/pesquisa-de-dados icon svg.png">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="planos">
+                        <button class="botao-planos">Conheça os nosso planos</button>
+                    </div>
+
                 </div>
             </div>
-            <div class="imagem-direita"> 
-            <div class="img_sobre">
-                <img src="../static/img/pesquisa-de-dados icon svg.png">
 
+        </section>
+        <div class="planofundo2">
+
+
+
+            <div class="texto">
+                <h2>Muito Facil de Usar!</h2>
             </div>
-        </div>
-       
-    </div>
-    <div class="planos"> 
-        <button class="botao-planos">Conheça os nosso planos</button>
-    </div>
-    
-</div> 
-</div>
-    
-</section>
-<div class="planofundo2">
-    
+            <div class="colunas">
 
-
-                <div class="texto">
-                    <h2>Muito Facil de Usar!</h2>
-                </div>
-                <div class="colunas">
-
-                <div class="coluna-30 "> 
+                <div class="coluna-30 ">
                     <h2>Cadastre seu Produto</h2>
-                    
-                        <img class="barras" src="../static/img/codigo-de-barras.png">
-                    
+
+                    <img class="barras" src="../static/img/codigo-de-barras.png">
+
 
                 </div>
 
@@ -107,10 +125,10 @@
 
                 <div class="coluna-30 ">
                     <h2>Veja seu Estoque </h2>
-                    
-            
-                        <img class="lupa" src="../static/img/lupa-com-marca-de-selecao (1).png">
-                    
+
+
+                    <img class="lupa" src="../static/img/lupa-com-marca-de-selecao (1).png">
+
                 </div>
 
 
@@ -119,11 +137,11 @@
 
                 <div class="coluna-30 ">
                     <h2>Monitore a Data de Validade</h2>
-                        <img class="calendario" src="../static/img/cronograma.png">
+                    <img class="calendario" src="../static/img/cronograma.png">
                 </div>
             </div>
-            </div>
-   
+        </div>
+
 
     </main>
 

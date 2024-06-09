@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>Stockezze</title>
+    <link rel="stylesheet" href="../static/css/filtro.css">
+    <link rel="stylesheet" href="../static/css/cadastroproduto.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Stockezze - Leitor Cod. Barras</title>
+    <script>
+        function updateBarcode(barcodeData) {
+            var barcodeDiv = document.getElementById('barcode');
+            barcodeDiv.innerHTML = "Código de Barras: " + barcodeData;
+        }
+    </script>
 </head>
 
 <body>
     <header>
-        <nav Class="navegacao">
+        <nav class="navegacao">
             <div class="fotos_principal">
                 <a href="{{url_for('home')}}">
                     <div id="stock"></div>
@@ -19,33 +29,47 @@
             </div>
         </nav>
 
-
         <section class="second_nav">
             <div class="escritas">
-                <a href="{{url_for('meu_estoque') }}" class="border_nav">
-                    <button class="botao_second_nav">Estoque</button></a>
-
-                <a href="{{ url_for('leitor_barras') }}" class="border_nav">
-                    <button class="botao_second_nav">Leitor de barras</button></a>
-
-                <a href="{{ url_for('cadastro_produtos') }}" class="border_nav">
-                    <button class="botao_second_nav">Cadastro de produtos</button></a>
-
-                <a href="{{ url_for('relatorio') }}" class="border_nav">
-                    <button class="botao_second_nav">Relatório</button></a>
-
+                <ul>
+                    <a href="{{ url_for('meu_estoque') }}">
+                        <li>Meu Estoque</li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('leitor_barras') }}">
+                        <li>Leitor código de barras</li>
+                    </a>
+                </ul>
+                <ul>
+                    <li>Cadastros
+                        <ul>
+                            <a href="{{ url_for('cadastro_lote') }}">
+                                <li>Cadastro de Lote</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_produto') }}">
+                                <li>Cadastro de Produto</li>
+                            </a>
+                            <a href="{{ url_for('cadastro_fornecedor') }}">
+                                <li>Cadastro de Fornecedor</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('relatorio') }}">
+                        <li>Relatório</li>
+                    </a>
+                </ul>
             </div>
-
         </section>
     </header>
+    <h1>Barcode Scanner</h1>
+    <img src="{{ url_for('video_feed') }}">
+    <div id="barcode"></div>
 
-    <main>
-        <h1>Leitor de Código de Barras</h1>
-    </main>
+    <h1>{{ barcode_data }}</h1>
 
-    <footer>
-
-    </footer>
 </body>
 
 </html>

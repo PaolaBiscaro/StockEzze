@@ -1,5 +1,7 @@
 #Banco de Dados
 
+#Banco de Dados
+
 create database stockezze_oficial;
 use stockezze_oficial;
 
@@ -31,15 +33,15 @@ CREATE TABLE lote (
     tipo_produto VARCHAR(255),
     valor_unitario DECIMAL(10, 2),
     valor_lote DECIMAL(10, 2),
-    quantidade INT,
+    quantidade INT,	
     estoque_minimo INT,
     data_cadastro DATE,
     data_fabricacao DATE,
     data_validade DATE,
     produto_id INT,
     fornecedor_id INT,
-    FOREIGN KEY (produto_id) REFERENCES produto(id),
-    FOREIGN KEY (fornecedor_id) REFERENCES fornecedor(id)
+    FOREIGN KEY (produto_id) REFERENCES Produto(id),
+    FOREIGN KEY (fornecedor_id) REFERENCES Fornecedor(id)
 );
 
 CREATE TABLE usuario (
@@ -59,11 +61,10 @@ CREATE TABLE entradasaida (
     produto_id INT,
     lote_id INT,
     usuario_id INT,
-    FOREIGN KEY (produto_id) REFERENCES produto(id),
-    FOREIGN KEY (lote_id) REFERENCES lote(id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    FOREIGN KEY (produto_id) REFERENCES Produto(id),
+    FOREIGN KEY (lote_id) REFERENCES Lote(id),
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
 );
-
 
 
 INSERT INTO produto (id, nome, descricao, codigo, fornecedor_id)
