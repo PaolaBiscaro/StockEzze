@@ -26,10 +26,14 @@
         <section class="second_nav">
             <div class="escritas">
                 <ul>
-                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                    <a href="{{ url_for('meu_estoque') }}">
+                        <li>Meu Estoque</li>
+                    </a>
                 </ul>
                 <ul>
-                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                    <a href="{{ url_for('leitor_barras') }}">
+                        <li>Leitor código de barras</li>
+                    </a>
                 </ul>
                 <ul>
                     <li>Cadastros
@@ -48,7 +52,9 @@
                     </li>
                 </ul>
                 <ul>
-                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
+                    <a href="{{ url_for('relatorio') }}">
+                        <li>Relatório</li>
+                    </a>
 
                 </ul>
 
@@ -111,26 +117,31 @@
                                 <h5>{{ lotes['id'] }}</h5>
                                 <h3>Cód: {{ lotes['codigo'] }}</h3>
                             </div>
+                           
                             <div class="ajuste-qtd">
                                 <div class="qtd">
                                     <span class="separador"></span>
                                     <h5>QTN</h5>
                                     <p>{{lotes['quantidade']}}</p>
                                 </div>
-                                <!-- <div class="qtd">
-                                    <span class="separador"></span>
-                                    <h5>Data_validade</h5>
-                                    <p>{{lotes['data_validade']}}</p>
-                                </div> -->
+                                
                                 <div class="lote-situacao">
                                     <div class="situacao">
-                                        {% if lotes['data_validade'] > data_date %}
+                                        {% if lotes['data_validade'] > data_date and lotes['data_validade'] >
+                                        data_date_trinta%}
                                         <img src="../static/img/circulo-verde.png" alt="Lote disponível">
+                                        {% elif lotes['data_validade'] > data_date and data_date_trinta >
+                                        lotes['data_validade']%}
+                                        <img src="../static/img/amarelo.png">
+                                        
                                         {% else %}
-                
+
                                         <img src="../static/img/circulo-vermelho.png" alt="Lote indisponível">
                                         {% endif %}
-                                    
+                                        
+                                       
+
+
                                     </div>
 
                                 </div>

@@ -1,0 +1,20 @@
+.forms-barra{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forms-barra input{
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+}
+#descricao input{
+    width: 300px;
+    height: 40px;
+    border: 1px solid black;
+}
+.bt-enviar{
+    margin: 20px 0 20px 0;
+}

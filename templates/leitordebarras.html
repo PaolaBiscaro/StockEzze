@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
     <link rel="stylesheet" href="../static/css/filtro.css">
     <link rel="stylesheet" href="../static/css/cadastroproduto.css">
+    <link rel="stylesheet" href="../static/css/barras.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Stockezze - Leitor Cod. Barras</title>
@@ -69,6 +70,22 @@
     <div id="barcode"></div>
 
     <h1>{{ barcode_data }}</h1>
+    <body>
+        <div class="forms-barra">
+        <h2 class="titulo">Ao apertar enviar mostre novamente o codigo na câmera</h2>
+        <form action="{{ url_for('processar_formulario') }}" method="post">
+            <div class="nome-produto">
+            <label for="nome_produto">Nome do produto:</label><br>
+            <input type="text" id="nome_produto" name="nome_produto"><br>
+        </div>
+        <div class="descricao">
+            <label for="descricao">Descrição:</label><br>
+            <input type="text" id="descricao" name="descricao"><br>
+        </div>
+            <input type="submit" value="Enviar" class="bt-enviar">
+        </form>
+    </div>
+    </body>
 
 </body>
 
