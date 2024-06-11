@@ -380,7 +380,7 @@ def cadastro_lote():
         codigo = request.form['codigo']
         #numero = request.form['numero']
         numero_padrao=1
-        tipo_produto = request.form['tipo_produto']
+        tipo_produto_padrao = 'tipo'
         valor_unitario = request.form['valor_unitario']
         valor_lote = request.form['valor_lote']
         quantidade = request.form['quantidade']
@@ -390,13 +390,13 @@ def cadastro_lote():
         data_validade = request.form['data_validade']
         produto_id = request.form['produto_id']
         fornecedor_id = request.form['fornecedor_id']
-        print(codigo, tipo_produto, valor_unitario, valor_lote, quantidade, estoque_minimo,
+        print(codigo, tipo_produto_padrao, valor_unitario, valor_lote, quantidade, estoque_minimo,
               data_cadastro, data_fabricacao, data_validade, produto_id, fornecedor_id, numero_padrao)
 
         # Inserir o lote no banco de dados
         cursor.execute(
             'INSERT INTO lote (codigo, numero, tipo_produto, valor_unitario, valor_lote, quantidade, estoque_minimo, data_cadastro, data_fabricacao, data_validade, produto_id, fornecedor_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
-            (codigo, numero_padrao, tipo_produto, valor_unitario, valor_lote, quantidade, estoque_minimo,
+            (codigo, numero_padrao, tipo_produto_padrao, valor_unitario, valor_lote, quantidade, estoque_minimo,
              data_cadastro, data_fabricacao, data_validade, produto_id, fornecedor_id)
         )
 
