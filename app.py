@@ -10,6 +10,7 @@ from datetime import datetime
 from dash import Dash, dcc, html
 import plotly.express as px
 from flask import current_app
+from datetime import datetime, date
 # from your_application import app
 
 
@@ -197,11 +198,30 @@ def lotes_produto(produto_id):
 
     cursor.execute('SELECT * FROM produto')
     produtos = cursor.fetchall()
+    
+        # String de data
+    data_string = '2024/06/11'
 
-    cursor.close()
-    conn.close()
+    # Converter a string para um objeto date
+    data_date = datetime.strptime(data_string, '%Y/%m/%d').date()
 
-    return render_template('todoslotes.html', produto_id=produto_id, id_produto_lote=id_produto_lote, produtos=produtos)
+    # Data atual para comparação
+    data_atual = date.today()
+    
+    data_trinta = '2024/07/11'
+    
+    data_date_trinta = datetime.strptime(data_trinta, '%Y/%m/%d').date()
+
+    # Comparar as datas
+    if data_date > data_atual:
+        print(f"A data {data_date} é maior que a data atual {data_atual}.")
+    else:
+        print(f"A data {data_date} não é maior que a data atual {data_atual}.")
+
+        cursor.close()
+        conn.close()
+
+    return render_template('todoslotes.html', produto_id=produto_id, id_produto_lote=id_produto_lote, produtos=produtos, data_date=data_date, data_date_trinta=data_date_trinta)
 
 # Filtrando os lotes próximos da validade
 

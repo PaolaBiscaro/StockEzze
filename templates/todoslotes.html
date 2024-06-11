@@ -109,7 +109,7 @@
                         <div class="ajuste-lote">
                             <div class="lote-titulo">
                                 <h5>{{ lotes['id'] }}</h5>
-                                <h3>{{ lotes['codigo'] }}</h3>
+                                <h3>Cód: {{ lotes['codigo'] }}</h3>
                             </div>
                             <div class="ajuste-qtd">
                                 <div class="qtd">
@@ -117,13 +117,20 @@
                                     <h5>QTN</h5>
                                     <p>{{lotes['quantidade']}}</p>
                                 </div>
+                                <!-- <div class="qtd">
+                                    <span class="separador"></span>
+                                    <h5>Data_validade</h5>
+                                    <p>{{lotes['data_validade']}}</p>
+                                </div> -->
                                 <div class="lote-situacao">
                                     <div class="situacao">
-                                        {% if lotes['quantidade'] > 0 %}
+                                        {% if lotes['data_validade'] > data_date %}
                                         <img src="../static/img/circulo-verde.png" alt="Lote disponível">
                                         {% else %}
+                
                                         <img src="../static/img/circulo-vermelho.png" alt="Lote indisponível">
                                         {% endif %}
+                                    
                                     </div>
 
                                 </div>
