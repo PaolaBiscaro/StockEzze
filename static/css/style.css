@@ -24,7 +24,7 @@ main {
 }
 
 .telainteira {
-    background-image: url(../img/IMAGEM_ESTOQUE.png);
+    background-image: url(../img/IMAGEM_ESTOQUE_D.png);
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -333,11 +333,13 @@ section.container1 div.descricao_produto {
     transition: .1s;
     height: 0;
     overflow: hidden;
+    display: none;
 }
 
 section.container1 div.descricao_produto.ativo {
     height: 80%;
     transition: .1s;
+    display: block;
 }
 
 section.container1 div.descricao_produto p {
@@ -664,7 +666,8 @@ section.mover_all_cadastro {
 
 /* Adicione estas regras no seu arquivo CSS */
 #bg-modal,
-#bg-modal1 {
+#bg-modal1,
+#bg-modal2 {
     display: none;
     position: fixed;
     top: 0;
@@ -681,7 +684,8 @@ section.mover_all_cadastro {
 }
 
 #bg-modal.show,
-#bg-modal1.show {
+#bg-modal1.show,
+#bg-modal2.show {
     display: flex;
     opacity: 1;
 }
@@ -699,7 +703,8 @@ section.mover_all_cadastro {
 
 
 .pop-do-dois.show,
-.modal-contact.show {
+.modal-contact.show,
+.expandir-retirar {
     transform: scale(1);
 }
 
@@ -734,6 +739,8 @@ section.mover_all_cadastro {
 }
 
 .botao-cancelar:hover {
+
+    
     background-color: #e3e1e1;
     transform: scale(1.1);
 }
@@ -980,7 +987,7 @@ section.mover_all_cadastro {
 /*Home*/
 
 .botao {
-    background-color: #800080;
+    background-color: #FF5757;
     color: #f8f7f9;
     border: 0;
     border-radius: 20px;
@@ -995,7 +1002,7 @@ section.mover_all_cadastro {
 }
 
 .botao:hover {
-    background-color: #6a046a;
+    background-color: #c83434;
     text-decoration: none;
     text-decoration: underline;
 

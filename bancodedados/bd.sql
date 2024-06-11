@@ -67,6 +67,7 @@ CREATE TABLE entradasaida (
 );
 
 
+
 INSERT INTO produto (id, nome, descricao, codigo, fornecedor_id)
 VALUES ('03', 'Produto 03', 'Exemplo de um produto 03, para testes', '373737', '1');
 

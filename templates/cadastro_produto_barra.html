@@ -58,6 +58,12 @@
                     <h1>Cadastrar Novo Produto</h1>
                     <h3>Adicione um novo produto ao seu estoque:</h3>
                 </div>
+
+                <h1>Barcode Scanner</h1>
+                <img src="{{ url_for('video_feed') }}">
+                <div id="barcode"></div>
+            
+                <h1>{{ barcode_data }}</h1>
                 <form method="post" action="{{ url_for('cadastro_ou_editar_produto', id=produto.id if produto else None) }}">
                     <div class="forms-nomeProduto">
                         <div class="nomeProdutoBox">
@@ -68,9 +74,9 @@
                                 placeholder="Digite o nome do produto"  value="{{ produto.nome if produto else '' }}" required><br>
                         </div>
                         <div class="cod-barras">
-                            <h4>Código de Barras:</h4>
+                            <!-- <h4>Código de Barras:</h4>
                             <a href="{{url_for('leitor_barras')}}"> <img src="../static/img/camera.png" width="100px"
-                                    alt="Clique para ler o código de barras"></a>
+                                    alt="Clique para ler o código de barras"></a> -->
 
                             <div class="nomeProdutoBox">
                                 <label for="nome">

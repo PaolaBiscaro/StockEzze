@@ -26,10 +26,14 @@
         <section class="second_nav">
             <div class="escritas">
                 <ul>
-                  <a href="{{ url_for('meu_estoque') }}">  <li>Meu Estoque</li></a>
+                    <a href="{{ url_for('meu_estoque') }}">
+                        <li>Meu Estoque</li>
+                    </a>
                 </ul>
                 <ul>
-                   <a href="{{ url_for('leitor_barras') }}"> <li>Leitor código de barras</li></a>
+                    <a href="{{ url_for('leitor_barras') }}">
+                        <li>Leitor código de barras</li>
+                    </a>
                 </ul>
                 <ul>
                     <li>Cadastros
@@ -37,7 +41,7 @@
                             <a href="{{ url_for('cadastro_lote') }}">
                                 <li>Cadastro de Lote</li>
                             </a>
-                            <a href="{{ url_for('cadastro_produto') }}">
+                            <a href="{{ url_for('cadastro_ou_editar_produto') }}">
                                 <li>Cadastro de Produto</li>
                             </a>
                             <a href="{{ url_for('cadastro_fornecedor') }}">
@@ -46,49 +50,38 @@
 
                         </ul>
                     </li>
+
+
+
                 </ul>
                 <ul>
-                    <a href="{{ url_for('relatorio') }}"><li>Relatório</li></a>
+                    <a href="{{ url_for('relatorio') }}">
+                        <li>Relatório</li>
+                    </a>
 
                 </ul>
 
             </div>
         </section>
     </header>
+    <!-- Resto do seu código HTML -->
+
     <main>
         <section class="mover_all_cadastro">
             <div class="centralizar_cadastro">
-                <!--  <div class="moveProdutos">
-                <h1 id="produtos">Produtos</h1>
-
-            </div>
-            <div class="barraestoque">
-                <h1 id="descricao">Nome</h1>
-                <h1 id="descricao">Qnt</h1>
-                <h1 id="descricao">Validade</h1>
-                <h1 id="descricao">Descrição</h1>
-                <h1 id="descricao">Codigo</h1>
-            </div> -->
-
-                <!--z-index-->
-
                 <div class="informacoes-pesquisa-filtro">
                     <div class="alinhar_cadastro_nome">
                         <h1>Meu estoque</h1>
-                        <h5>Total de produtos cadastrados: {{produtos|length}}</h5>
+                        <h5>Total de produtos cadastrados: {{ produtos|length }}</h5>
                     </div>
-                    <!--Div barra de pesquisa-->
                     <div class="pesquisa-filtro-esquerdo">
-
                         <div class="search">
                             <label for="searchInput">
                                 <span class="material-symbols-outlined">search</span>
                             </label>
                             <input type="text" id="searchInput" placeholder="Pesquise o produto...">
                         </div>
-
                         <div class="filter-container">
-
                             <div class="dropdown">
                                 <button class="dropbtn" onclick="toggleDropdown()"><img
                                         src="../static/img/filtro (2).png"></button>
@@ -103,23 +96,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-                <!-- {% for produto in produtos %}
-                <div>
-                    <tr>{{produto.nome}}</tr>
-                </div>
-                {% endfor %} -->
-
                 <section class="container1">
                     {% for produto in produtos %}
-                    <div class="produto" onclick="showHide('#produto1')" data-name="{{produto[1]}}"
-                        data-code="{{produto[3]}}" data-quantity="366" data-stock="high">
+                    <div class="produto" onclick="showHide('produto{{ produto[0] }}')" data-name="{{ produto[1] }}"
+                        data-code="{{ produto[3] }}" data-quantity="{{ produto[4] }}" data-stock="{{ produto[5] }}">
                         <div class="ajuste-produto">
                             <div class="produto-titulo">
-
                                 <h5>{{ produto[3] }}</h5>
                                 <h3>{{ produto[1] }}</h3>
                             </div>
@@ -127,236 +110,103 @@
                                 <div class="qtd">
                                     <span class="separador"></span>
                                     <h5>QTN</h5>
-                                    {% for produto in produtos_do_lote %}
-                                    <p>{{ produto.quantidade }}</p>
-                                    {% endfor %}
-
+                                    <p>{{ entradas_saida_por_produto[produto[0]].entrada }}</p>
                                 </div>
                                 <div class="lote">
                                     <a href="{{ url_for('lotes_produto', produto_id=produto[0]) }}">
                                         <div class="lote-img"></div>
                                     </a>
+                                    <!-- <a href="{{ url_for('lotes_produto', produto_id=produto[0]) }}">
+                                        <div class="lote-img"></div>
+                                    </a> -->
+                                    <div class="seta">
+                                        <!-- {% if produto[5] == 'low' %}
+                                        <img src="{{ url_for('static', filename='../static/img/seta-para-baixo.png') }}"
+                                            alt="Seta para baixo">
+                                        {% else %}
+                                        <img src="{{ url_for('static', filename='../static/img/seta-para-cima.png') }}"
+                                            alt="Seta para cima">
+                                        {% endif %} -->
 
-                                    <div class="seta" alt="Estoque Alto"></div>
 
-                                    <div class="editar" alt="Editar Cadastro"></div>
-
-                                    <!-- <div class="setabaixo"></div> -->
-
+                                    </div>
+                                    <a href="{{ url_for('cadastro_ou_editar_produto', id=produto[0]) }}">
+                                        <div class="editar" alt="Editar Cadastro"></div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="descricao_produto" id="produto1">
+                        <div class="descricao_produto" id="produto{{ produto[0] }}">
                             <p>{{ produto[2] }}</p>
 
 
-
+                            <!-- <div>
+                                <div style="color: #27aa1e;">Entradas no estoque: {{
+                                    entradas_saida_por_produto[produto[0]].entrada }} </div>
+                                <div style="color: #b61d0c;">Saídas no estoque: {{
+                                    entradas_saida_por_produto[produto[0]].saida }} </div>
+                            </div> -->
                             <div class="botoes">
-                                <a onclick="showPopup1('flex');"><button class="btn-excluir">Excluir
-                                        Cadastro</button></a>
+                                <button class="btn-excluir" onclick="showPopup1('flex', '{{ produto[0] }}');">Excluir
+                                    Cadastro</button>
                                 <div class="vermelhos">
-                                    <button class="btn-retirar">Retirar</button>
-                                    <a onclick="showPopup('flex');"><button class="btn-adicionar">Adicionar</button></a>
+                                    <button class="btn-retirar" onclick="showPopup2('flex');">Retirar</button>
+                                    <button class="btn-adicionar" onclick="showPopup('flex');">Adicionar</button>
                                 </div>
+
                             </div>
-
-
-
-
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="produto" onclick="showHide('#produto2')" data-name="Macarrão" data-code="1565888"
-                        data-quantity="281" data-stock="high">
-                        <div class="ajuste-produto">
-                            <div class="produto-titulo">
-                                <h5>1565888</h5>
-                                <h3>Macarrão Dona Benta</h3>
-                            </div>
-                            <div class="ajuste-qtd">
-                                <div class="qtd">
-                                    <span class="separador"></span>
-                                    <h5>QTN</h5>
-                                    <p>281</p>
-                                </div>
-                                <div class="lote">
-                                    <a href="{{url_for('lotes_produto',  produto_id=produto_id)}}">
-                                        <div class="lote-img"></div>
-                                    </a>
-                                    <div class="seta"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="descricao_produto" id="produto2">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-                                dolorum minima earum
-                                repudiandae? Dolorem suscipit unde atque, voluptatum ipsum et, eius eligendi vitae
-                                tempore
-                                modi
-                                magnam quo, nesciunt quia pariatur! Lorem ipsum dolor sit, amet consectetur adipisicing
-                                elit.
-                                Autem temporibus corrupti similique quod culpa, officiis quos laboriosam doloremque
-                                quae.
-                                Quae
-                                facere tenetur architecto esse cumque, non ullam consequatur iure delectus!</p>
-
-                            <div class="linha">
-                                <div class="coluna-10">
-                                    <h4>Data Validade</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Data Cadastro</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Total de Lotes</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Total de unidades</h4>
-                                    <p>100</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Valor unitário</h4>
-                                    <p>R$5,00</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Valor lote</h4>
-                                    <p>R$200</p>
-                                </div>
-                            </div>
-                            <div class="botoes">
-                                <button class="btn-excluir">Excluir Cadastro</button>
-                                <div class="vermelhos">
-                                    <button class="btn-retirar">Retirar</button>
-                                    <button class="btn-adicionar">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produto" onclick="showHide('#produto3')" data-name="Banana" data-code="135687"
-                        data-quantity="21" data-stock="low">
-                        <div class="ajuste-produto">
-                            <div class="produto-titulo">
-                                <h5>135687</h5>
-                                <h3>Banana</h3>
-                            </div>
-                            <div class="ajuste-qtd">
-                                <div class="qtd">
-                                    <span class="separador"></span>
-                                    <h5>QTN</h5>
-                                    <p>21</p>
-                                </div>
-                                <div class="lote">
-                                    <a href="todoslotes.html">
-                                        <div class="lote-img"></div>
-                                    </a>
-                                    <div class="seta"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="descricao_produto" id="produto3">
-                            <p>Banana bem amarela ui ui</p>
-
-                            <div class="linha">
-                                <div class="coluna-10">
-                                    <h4>Data Validade</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Data Cadastro</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Total de Lotes</h4>
-                                    <p>xx/xx/xxxx</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Total de unidades</h4>
-                                    <p>100</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Valor unitário</h4>
-                                    <p>R$5,00</p>
-                                </div>
-                                <div class="coluna-10">
-                                    <h4>Valor lote</h4>
-                                    <p>R$200</p>
-                                </div>
-                            </div>
-                            <div class="botoes">
-                                <a onclick="showPopup1('flex');"><button class="btn-excluir">Excluir
-                                        Cadastro</button></a>
-                                <div class="vermelhos">
-                                    <a onclick="showPopup2('flex')"><button class="btn-retirar">Retirar</button></a>
-                                    <a onclick="showPopup('flex');"><button class="btn-adicionar">Adicionar</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
         </section>
-        <div id="bg-modal">
-            <div class="pop-do-dois">
-                <h2>Deseja adicionar um novo lote ao seu estoque?</h2>
-
-                <!-- <div class="inserir">
-
-                    <input type="number" placeholder="Quantidade" name="input-quantidade">
-                    <input type="text" placeholder="N° do Lote" name="input-lote">
-                </div> -->
-
-                <p class="paragrafo-p-vermelho">Crie um novo registro de lote!</p>
-
-                <button class="botao-limpar fechar"><a onclick="showPopup('none');">Não, cancelar</a></button>
-                <button class="botao-adicionar"><a href="{{ url_for('cadastro_lote') }}">Sim, adicionar </a></button>
-
-
-                <!-- <div class="fechar">
-                    <a onclick="showPopup('none');"> <button class="buttonpopupclose">Não, cancelar</button> </a>
-                </div> -->
-            </div>
-        </div>
-        <div id="bg-modal1">
-            <div class="modal-contact">
-                <h1>Excluir Cadastro?</h1>
-                <p> Tem certeza que deseja excluir esse cadastro do seu estoque? Todos os dados referentes a esse item
-                    serão perdidos! </p>
-                <p class="paragrafo-p-vermelho">Código, valor, quantidade e outros dados serão excluidos</p>
-
-                <!-- <button class="botao-cancelar">Cancelar</button> -->
-                <button class="botao-cancelar fechar"><a onclick="showPopup1('none');">Cancelar</a></button>
-                <button class="botao-excluir">Excluir</button>
-
-                <!-- <div class="fechar">
-                    <a onclick="showPopup1('none');"> <button class="buttonpopupclose">X</button> </a>
-                </div> -->
-
-            </div>
-        </div>
-        <!-- <div id="bg-modal2">
-            <div class="pop-do-retirar">
-                <h1>Retirar Produtos</h1>
-                <p> Deseja retirar um lote de seu estoque? </p>
-                <p class="paragrafo-p-vermelho">Código, valor, quantidade e outros dados serão excluidos</p>
-
-                <button class="botao-cancelar">Não, Cancelar</button>
-                <button class="botao-excluir">Sim, Retirar</button>
-
-                <div class="fechar">
-                    <a onclick="showPopup2('none');"> <button class="buttonpopupclose">x</button> </a>
-                </div>
-            </div>
-        </div> -->
-
     </main>
 
     <footer></footer>
 
+    <div id="bg-modal1">
+        <div class="modal-contact">
+            <h1>Excluir Cadastro?</h1>
+            <p>Tem certeza que deseja excluir esse cadastro do seu estoque? Todos os dados referentes a esse item serão
+                perdidos!</p>
+            <p class="paragrafo-p-vermelho">Código, valor, quantidade e outros dados serão excluídos</p>
+            <form id="deleteForm" action="" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" id="produtoId" name="id" value="">
+                <button type="submit">Deletar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="bg-modal">
+        <div class="pop-do-dois">
+            <h2>Deseja adicionar um novo lote ao seu estoque?</h2>
+            <p class="paragrafo-p-vermelho">Crie um novo registro de lote!</p>
+            <button class="botao-limpar fechar"><a onclick="showPopup('none');">Não, cancelar</a></button>
+            <button class="botao-remover"><a href="{{ url_for('cadastro_lote') }}">Sim, adicionar</a></button>
+        </div>
+    </div>
+    <div id="bg-modal2">
+        <div class="expandir-retirar">
+            <h2>Deseja retirar produtos do seu estoque?</h2>
+            <p class="paragrafo-p-vermelho">Remova produtos do registro de estoque!</p>
+            <form action="{{ url_for('retirar', produto_id=produto_id) }}" method="POST">
+                <label for="lote">Selecione o lote:</label>
+                <select name="lote" id="lote" required>
+                    {% for lote in lotes_disponiveis %}
+                    <option value="{{ lote[0] }}">{{ lote[2] }}</option> <!-- Ajuste conforme os índices corretos -->
+                    {% endfor %}
+                </select>
+                <label for="quantidade">Quantidade a ser retirada:</label>
+                <input type="number" name="quantidade" id="quantidade" min="1" required>
+                <button type="submit" class="botao-remover">Sim, remover</button>
+            </form>
+            <button class="botao-limpar fechar"><a onclick="showPopup('none');">Não, cancelar</a></button>
+        </div>
+    </div>
+
     <script src="../static/js/srcript.js"></script>
 </body>
-
 
 </html>

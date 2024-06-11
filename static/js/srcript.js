@@ -1,20 +1,21 @@
-
+// Exibir dados
 const displayData = data => {
     const container = document.querySelector(".container1");
     container.innerHTML = "";
     data.forEach(e => {
         container.innerHTML += `
-        <div class="produto">
+        <div class="produto" data-id="${e.id}">
             <h5>${e.codigo}</h5>
             <h3>${e.title}</h3>
             <div class="descricao_produto">
                 <p>${e.descricao}</p>
             </div>
         </div>
-        `
+        `;
     });
 }
 
+// Função de busca
 const searchInput = document.querySelector("#searchInput");
 const produtos = document.querySelectorAll(".produto");
 
@@ -32,30 +33,69 @@ searchInput.addEventListener("keyup", (e) => {
     });
 });
 
+// Função para exibir o popup de exclusão
+function showPopup1(display, produtoId) {
+    const modal = document.getElementById('bg-modal1');
+    const deleteForm = document.getElementById('deleteForm');
+    const produtoIdInput = document.getElementById('produtoId');
+
+    modal.style.display = display;
+    if (display === 'flex') {
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.style.opacity = 1;
+            modal.classList.add('show');
+        }, 10);
+        // Define o ID do produto no formulário
+        produtoIdInput.value = produtoId;
+        deleteForm.action = `/deletar/${produtoId}`;
+    } else {
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Função para exibir popup genérico
 function showPopup(display) {
-    const popup = document.getElementById('bg-modal');
+    const modal = document.getElementById('bg-modal');
+    modal.style.display = display;
     if (display === 'flex') {
-        popup.classList.add('show');
-        popup.querySelector('.pop-do-dois').classList.add('show');
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.style.opacity = 1;
+            modal.classList.add('show');
+        }, 10);
     } else {
-        popup.classList.remove('show');
-        popup.querySelector('.pop-do-dois').classList.remove('show');
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        }, 300);
     }
 }
 
-function showPopup1(display) {
-    const popup = document.getElementById('bg-modal1');
+// Função para exibir popup genérico
+function showPopup2(display) {
+    const modal = document.getElementById('bg-modal2');
+    modal.style.display = display;
     if (display === 'flex') {
-        popup.classList.add('show');
-        popup.querySelector('.modal-contact').classList.add('show');
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.style.opacity = 1;
+            modal.classList.add('show');
+        }, 10);
     } else {
-        popup.classList.remove('show');
-        popup.querySelector('.modal-contact').classList.remove('show');
+        modal.style.opacity = 0;
+        setTimeout(() => {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        }, 300);
     }
 }
 
-
-/*FILTRO*/
 
 // Função para alternar a visibilidade do dropdown
 function toggleDropdown() {
@@ -103,32 +143,17 @@ function resetFilter() {
     });
 }
 
-//Função para alternar a visibilidade dos detalhes do produto
+// Função para alternar a visibilidade dos detalhes do produto
 function showHide(id) {
-    const element = document.querySelector(id);
-    element.classList.toggle('ativo');
+    console.log("ID passado para showHide:", id);
+    const element = document.getElementById(id);
+    if (element) {
+        console.log("Elemento encontrado:", element);
+        element.classList.toggle('ativo');
+    } else {
+        console.log("Elemento não encontrado para o ID:", id);
+    }
 }
-
-
-// function showHide(produtoId) {
-//     var divProduto = document.getElementById(produtoId);
-//     var divDescricao = divProduto.querySelector('.descricao_produto');
-
-//     if (divDescricao.style.display === "none" || divDescricao.style.display === "") {
-//         divDescricao.style.display = "block";
-//     } else {
-//         divDescricao.style.display = "none";
-//     }
-// }
-
-// function showHide(elementId) {
-//     var element = document.getElementById(elementId);
-//     if (element.style.display === "none" || element.style.display === "") {
-//         element.style.display = "block";
-//     } else {
-//         element.style.display = "none";
-//     }
-// }
 
 // Fechar dropdown quando clicado fora dele
 document.addEventListener('click', function(event) {
@@ -146,69 +171,3 @@ document.querySelectorAll('.produto').forEach(produto => {
         event.stopPropagation();
     });
 });
-
-// Função para exibir popup de forma suave
-function showPopup(display) {
-    const modal = document.getElementById('bg-modal');
-    modal.style.display = display;
-    if (display === 'flex') {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.style.opacity = 1;
-            modal.classList.add('show');
-        }, 10);
-    } else {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.classList.remove('show');
-            modal.style.display = 'none';
-        }, 300);
-    }
-}
-
-function showPopup1(display) {
-    const modal = document.getElementById('bg-modal1');
-    modal.style.display = display;
-    if (display === 'flex') {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.style.opacity = 1;
-            modal.classList.add('show');
-        }, 10);
-    } else {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.classList.remove('show');
-            modal.style.display = 'none';
-        }, 300);
-    }
-
-
-    
-}
-
-
-
-
-
-
-function showPopup2(display) {
-    const modal = document.getElementById('bg-modal2');
-    modal.style.display = display;
-    if (display === 'flex') {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.style.opacity = 1;
-            modal.classList.add('show');
-        }, 10);
-    } else {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-            modal.classList.remove('show');
-            modal.style.display = 'none';
-        }, 300);
-    }
-
-
-    
-}
