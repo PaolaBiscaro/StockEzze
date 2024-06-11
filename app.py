@@ -434,61 +434,10 @@ def cadastro_lote():
     return render_template('cadastro_lote.html', fornecedores=fornecedores, produtos=produtos)
 
 
+
 @app.route('/leitorbarras')
 def leitor_barras():
-    return render_template('cadastro_produto_barra.html')
-
-
-# def generate_frames():
-#     cap = cv2.VideoCapture(0)
-#     barcode_data = None
-#     while True:
-#         success, frame = cap.read()
-#         if not success:
-#             break
-#         else:
-#             if barcode_data is None:
-#                 # Decodifica os códigos de barras no quadro
-#                 barcodes = pyzbar.decode(frame)
-#                 for barcode in barcodes:
-#                     # Extraia os dados do código de barras
-#                     barcode_data = barcode.data.decode('utf-8')
-#                     barcode_type = barcode.type
-
-#                     # Desenhe um retângulo ao redor do código de barras
-#                     (x, y, w, h) = barcode.rect
-#                     cv2.rectangle(frame, (x, y), (x + w, y + h),
-#                                   (0, 255, 0), 2)
-
-#                     # Coloque o texto do código de barras na imagem
-#                     text = "{} ({})".format(barcode_data, barcode_type)
-#                     cv2.putText(frame, text, (x, y - 10),
-#                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-#                     # Exibe um formulário HTML para o usuário preencher os detalhes do produto
-#                     conn = conexao_bd()
-#                     cursor = conn.cursor()
-#                     codigo_p = barcode_data
-#                     consulta = "SELECT * FROM produto WHERE codigo = %s"
-#                     cursor.execute(consulta, (codigo_p,))
-#                     resultado = cursor.fetchall()
-#                     cursor.close()
-#                     conn.close()
-#                     if len(resultado) > 0:
-#                         print("Produto encontrado:", resultado)
-#                     else:
-#                         print("Produto não encontrado no banco de dados.")
-#                         opcao = input("Deseja fazer um novo cadastro com o código de barras [S/N]? ")
-#                         if opcao.upper() == "S":
-#                             print("Redirecionando para cadastrar ou editar produto...")
-#                                     # Redirecionar para a rota de cadastro/editar produto
-#                             return cadastro_ou_editar_produto(id=None)
-#                         else:
-#                             print("Operação cancelada.")
-
-#                     # Retornar o frame
-#             yield (b'--frame\r\n'
-#                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+    return render_template('leitordebarras.html')
 
 
 def generate_frames():
@@ -530,24 +479,141 @@ def generate_frames():
 
             # Se um código de barras for identificado, pare de gerar novos quadros
             if barcode_data is not None:
+                opcao = str(input("Caso queira cadastrar o produto [S/N]"))
+                if opcao == 'S':
+                    nome = str(input("Adicione o nome produto: "))
+                    descricao = str(input("Adicione a descrição: "))
+                    codigo = barcode_data
+                    conexao = conexao_bd()
+                    cursor = conexao.cursor()
+                    cursor.execute(
+                        'INSERT INTO produto (nome, descricao, codigo) VALUES (%s, %s, %s)', (nome, descricao, codigo))
+                    conexao.commit()
+                    cursor.close()
+                    conexao.close()
 
-                print("Produto encontrado:", barcode_data)
 
-                print("Produto não encontrado no banco de dados.")
-                opcao = input(
-                    "Deseja fazer um novo cadastro com o código de barras [S/N]? ")
-                if opcao.upper() == "S":
-                    print("Redirecionando para cadastrar produto...")
-                    # Redirecionar para a rota de cadastro de produto
-                    return redirect(url_for('cadastro_produto'))
-                else:
-                    print("Operação cancelada.")
-                break
- 
 
 @app.route('/video_feed')
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+
+# @app.route('/leitorbarras')
+# def leitor_barras():
+#     return render_template('cadastro_produto_barra.html')
+
+
+# # def generate_frames():
+# #     cap = cv2.VideoCapture(0)
+# #     barcode_data = None
+# #     while True:
+# #         success, frame = cap.read()
+# #         if not success:
+# #             break
+# #         else:
+# #             if barcode_data is None:
+# #                 # Decodifica os códigos de barras no quadro
+# #                 barcodes = pyzbar.decode(frame)
+# #                 for barcode in barcodes:
+# #                     # Extraia os dados do código de barras
+# #                     barcode_data = barcode.data.decode('utf-8')
+# #                     barcode_type = barcode.type
+
+# #                     # Desenhe um retângulo ao redor do código de barras
+# #                     (x, y, w, h) = barcode.rect
+# #                     cv2.rectangle(frame, (x, y), (x + w, y + h),
+# #                                   (0, 255, 0), 2)
+
+# #                     # Coloque o texto do código de barras na imagem
+# #                     text = "{} ({})".format(barcode_data, barcode_type)
+# #                     cv2.putText(frame, text, (x, y - 10),
+# #                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+# #                     # Exibe um formulário HTML para o usuário preencher os detalhes do produto
+# #                     conn = conexao_bd()
+# #                     cursor = conn.cursor()
+# #                     codigo_p = barcode_data
+# #                     consulta = "SELECT * FROM produto WHERE codigo = %s"
+# #                     cursor.execute(consulta, (codigo_p,))
+# #                     resultado = cursor.fetchall()
+# #                     cursor.close()
+# #                     conn.close()
+# #                     if len(resultado) > 0:
+# #                         print("Produto encontrado:", resultado)
+# #                     else:
+# #                         print("Produto não encontrado no banco de dados.")
+# #                         opcao = input("Deseja fazer um novo cadastro com o código de barras [S/N]? ")
+# #                         if opcao.upper() == "S":
+# #                             print("Redirecionando para cadastrar ou editar produto...")
+# #                                     # Redirecionar para a rota de cadastro/editar produto
+# #                             return cadastro_ou_editar_produto(id=None)
+# #                         else:
+# #                             print("Operação cancelada.")
+
+# #                     # Retornar o frame
+# #             yield (b'--frame\r\n'
+# #                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+
+# def generate_frames():
+#     cap = cv2.VideoCapture(0)
+#     barcode_data = None
+#     while True:
+#         success, frame = cap.read()
+#         if not success:
+#             break
+#         else:
+#             if barcode_data is None:
+#                 # Decodifica os códigos de barras no quadro
+#                 barcodes = pyzbar.decode(frame)
+#                 for barcode in barcodes:
+#                     # Extraia os dados do código de barras
+#                     barcode_data = barcode.data.decode('utf-8')
+#                     barcode_type = barcode.type
+
+#                     # Desenhe um retângulo ao redor do código de barras
+#                     (x, y, w, h) = barcode.rect
+#                     cv2.rectangle(frame, (x, y), (x + w, y + h),
+#                                   (0, 255, 0), 2)
+
+#                     # Coloque o texto do código de barras na imagem
+#                     text = "{} ({})".format(barcode_data, barcode_type)
+#                     cv2.putText(frame, text, (x, y - 10),
+#                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+
+# # Print dos dados do código de barras
+#                     print("Código de Barras Identificado:", barcode_data)
+#             # Codificar o frame em formato de imagem JPEG
+#             ret, buffer = cv2.imencode('.jpg', frame)
+#             frame = buffer.tobytes()
+
+#             # Retornar o frame
+#             yield (b'--frame\r\n'
+#                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+#             # Se um código de barras for identificado, pare de gerar novos quadros
+#             if barcode_data is not None:
+
+#                 print("Produto encontrado:", barcode_data)
+
+#                 print("Produto não encontrado no banco de dados.")
+#                 opcao = input(
+#                     "Deseja fazer um novo cadastro com o código de barras [S/N]? ")
+#                 if opcao.upper() == "S":
+#                     print("Redirecionando para cadastrar produto...")
+#                     # Redirecionar para a rota de cadastro de produto
+#                     return redirect(url_for('cadastro_produto'))
+#                 else:
+#                     print("Operação cancelada.")
+#                 break
+ 
+
+# @app.route('/video_feed')
+# def video_feed():
+#     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 app.run(debug=True)
