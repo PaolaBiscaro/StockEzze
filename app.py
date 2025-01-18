@@ -26,10 +26,10 @@ app = Flask(__name__)
 
 # Configuração do banco de dados
 db_config = {
-    "host": "127.0.0.1",
-    "user": "root",
-    "password": "paola05052015",
-    "database": "stockezze_oficial"
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": ""
 }
 
 # Função para conectar ao banco de dados
